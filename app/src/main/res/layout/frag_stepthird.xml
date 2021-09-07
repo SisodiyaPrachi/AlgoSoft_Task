@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/ic_baseline_keyboard_backspace_24"
+        app:layout_constraintLeft_toLeftOf="parent">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="STEP 3 OF 4"
+        android:layout_marginTop="30dp"
+        android:padding="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/steps"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Add Property Photos"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Add upto 10 photos of the property"
+        app:layout_constraintTop_toBottomOf="@+id/txt_details"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/img_steps"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/step3"
+        app:layout_constraintTop_toBottomOf="@+id/txt_type"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="10dp"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </ImageView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_steps"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cardview_2"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
+
+
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+
+        <ImageView
+            android:id="@+id/select_img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+            <TextView
+                android:id="@+id/txt_img1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add images"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center">
+            </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_2"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_steps"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/cardview"
+        app:cardElevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+       >
+
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview3"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cardview4"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview4"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/cardview3"
+        app:cardElevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview5"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cardview6"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview6"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/cardview5"
+        app:cardElevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview7"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cardview8"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
+
+     <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+         android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview8"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/cardview7"
+        app:cardElevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview9"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview7"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cardview10"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview10"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:background="#FFF"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardview8"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/cardview9"
+        app:cardElevation="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:id="@+id/select_img10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_add_circle_outline_24"></ImageView>
+
+        <TextView
+            android:id="@+id/txt_img10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add images"
+            android:layout_marginTop="18dp"
+            android:layout_gravity="center">
+        </TextView>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:padding="3dp"
+        android:textSize="15sp"
+        android:text="What makes your property unique?"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview9"></TextView>
+
+    <TextView
+        android:id="@+id/txt_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="6dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_msg"
+        android:text="Adding description will increase your listing visibility">
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/txt_extrainfo"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/txt_info">
+    </com.google.android.material.textfield.TextInputEditText>
+
+
+    <TextView
+        android:id="@+id/tutorial"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Tutorial"
+        android:fontFamily="@font/open_sans_semibold"
+        app:layout_constraintTop_toBottomOf="@+id/txt_extrainfo"
+        android:gravity="center"
+        android:background="@drawable/rounded_edittext_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="20dp"
+       >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tutorial_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Tutorial"
+        android:background="@drawable/rounded_edittext"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:gravity="center"
+        android:drawableLeft="@drawable/deed"
+        android:drawableRight="@drawable/remove"
+        app:layout_constraintTop_toBottomOf="@+id/tutorial"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/nxt_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Next"
+        android:fontFamily="@font/open_sans_semibold"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/txt_extrainfo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:drawableRight="@drawable/ic_baseline_arrow_right_alt_24"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

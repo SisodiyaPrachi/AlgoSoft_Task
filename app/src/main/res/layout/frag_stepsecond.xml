@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/ic_baseline_keyboard_backspace_24"
+        app:layout_constraintLeft_toLeftOf="parent">
+    </ImageView>
+
+
+    <TextView
+        android:id="@+id/steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="STEP 2 OF 4"
+        android:layout_marginTop="40dp"
+        android:padding="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/steps"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Add Property Details"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txt_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Location, Room Details, Area etc"
+        app:layout_constraintTop_toBottomOf="@+id/txt_details"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/img_steps"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/step2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_type"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="10dp"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </ImageView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/img_steps"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/kind_property"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Where is it Located?"
+        android:layout_margin="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:id="@+id/location_place"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/kind_property"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="10dp"
+
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/spi_location_place"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textSize="15sp"
+            android:background="@drawable/rounded_edittext"
+           />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btn_location"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="USE MY CURRENT LOCATION"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/location_place"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="10dp">
+    </Button>
+
+     <TextView
+         android:id="@+id/txt_address"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         app:layout_constraintTop_toBottomOf="@+id/btn_location"
+         app:layout_constraintLeft_toLeftOf="parent"
+         android:layout_margin="10dp"
+         android:textSize="15sp"
+         android:textStyle="bold"
+         android:fontFamily="@font/open_sans_semibold"
+         android:textColor="@color/black"
+         android:text="Address">
+     </TextView>
+
+       <EditText
+           android:id="@+id/address"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="10dp"
+           android:hint="Enter Address"
+           android:background="@drawable/rounded_edittext"
+           android:padding="8dp"
+           app:layout_constraintTop_toBottomOf="@+id/txt_address"
+           app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent">
+       </EditText>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/black"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        app:layout_constraintRight_toLeftOf="@+id/room_details"
+        ></View>
+
+    <TextView
+        android:id="@+id/room_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="Add room details"
+        android:textSize="15sp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        app:layout_constraintLeft_toRightOf="@+id/divider"
+        app:layout_constraintRight_toLeftOf="@+id/divider_right">
+    </TextView>
+
+    <View
+        android:id="@+id/divider_right"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:layout_marginRight="5dp"
+        android:background="@color/black"
+        android:layout_marginTop="25dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        app:layout_constraintLeft_toRightOf="@+id/room_details"
+        ></View>
+
+    <TextView
+        android:id="@+id/bedrooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No. of Bedrooms"
+        android:textSize="15sp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_details">
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:id="@+id/txt_bedrooms"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/bedrooms"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="10dp"
+
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/spi_bedrooms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textSize="15sp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Area Details"
+        android:textSize="15sp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bedrooms">
+    </TextView>
+
+    <EditText
+        android:id="@+id/txt_areadetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="8dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/area"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/area_meas">
+    </EditText>
+
+
+            <!--<Spinner
+                android:id="@+id/sqmt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_areadetails"
+                app:layout_constraintTop_toBottomOf="@+id/area"
+                tools:ignore="MissingConstraints">
+
+            </Spinner>-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="wrap_content"
+                android:id="@+id/area_meas"
+                android:layout_height="48dp"
+                app:layout_constraintLeft_toRightOf="@+id/txt_areadetails"
+                app:layout_constraintTop_toBottomOf="@+id/area"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="5dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/sqmt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:background="@drawable/rounded_edittext"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+        android:id="@+id/kindproperty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What Kind of Property?"
+        android:textSize="15sp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_areadetails">
+    </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/kindproperty"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rec_holder"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:id="@+id/edit_deed"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:text="Title Deed">
+    </TextView>
+
+
+
+
+    <ImageView
+        android:id="@+id/plus_button_deed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/yellow_color"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rec_holder">
+    </ImageView>
+
+            <TextView
+                android:id="@+id/titledeedimg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Title Deed"
+                android:visibility="gone"
+                android:background="@drawable/rounded_edittext"
+                android:padding="8dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/deed"
+                android:drawableRight="@drawable/remove"
+                app:layout_constraintTop_toBottomOf="@+id/edit_deed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+            </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/titledeedimg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/edit_eid"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:text="EID/Passport">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/eid_plus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/yellow_color"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titledeedimg">
+    </ImageView>
+
+            <TextView
+                android:id="@+id/eid_passimg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="EID/Passport"
+                android:background="@drawable/rounded_edittext"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:drawableLeft="@drawable/deed"
+                android:drawableRight="@drawable/remove"
+                app:layout_constraintTop_toBottomOf="@+id/edit_eid"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+            </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/edit_eid"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:id="@+id/edit_tradelicense"
+        android:textSize="15sp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:text="Trade License">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/license_plus_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/yellow_color"
+        android:visibility="gone"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eid_plus_button">
+    </ImageView>
+
+            <TextView
+                android:id="@+id/tra_lic_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Trade License"
+                android:background="@drawable/rounded_edittext"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:gravity="center"
+                android:drawableLeft="@drawable/deed"
+                android:drawableRight="@drawable/remove"
+                app:layout_constraintTop_toBottomOf="@+id/edit_tradelicense"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+            </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tra_lic_img"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textSize="15sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/eid"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:text="EID">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/eid_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/yellow_color"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tra_lic_img">
+    </ImageView>
+
+            <TextView
+                android:id="@+id/eid_com_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="EID"
+                android:visibility="gone"
+                android:background="@drawable/rounded_edittext"
+                android:padding="8dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/deed"
+                android:drawableRight="@drawable/remove"
+                app:layout_constraintTop_toBottomOf="@+id/eid"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+            </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/eid_com_img"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/poa"
+        android:fontFamily="@font/open_sans_semibold"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:text="POA(Power of Attorney)">
+    </TextView>
+
+    <ImageView
+        android:id="@+id/poa_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:tint="@color/yellow_color"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:fontFamily="@font/open_sans_semibold"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eid_com_img">
+    </ImageView>
+
+            <TextView
+                android:id="@+id/poa_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="POA"
+                android:background="@drawable/rounded_edittext"
+                android:padding="8dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:drawableLeft="@drawable/deed"
+                android:drawableRight="@drawable/remove"
+                app:layout_constraintTop_toBottomOf="@+id/poa"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+            </TextView>
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Next"
+                android:fontFamily="@font/open_sans_semibold"
+                android:background="@drawable/rounded_edittext"
+                android:drawableRight="@drawable/ic_baseline_arrow_right_alt_24"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/poa_img"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="40dp"
+                >
+            </Button>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

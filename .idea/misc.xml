@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_biddetails.xml" value="0.1" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_purchasedetails.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_sellerpropdetails.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_solddetails.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_details.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_home_agent.xml" value="0.10733695652173914" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

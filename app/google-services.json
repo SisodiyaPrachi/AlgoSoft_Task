@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "361450168870",
+    "project_id": "cashmyprop",
+    "storage_bucket": "cashmyprop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361450168870:android:018541464503ef76c2fce7",
+        "android_client_info": {
+          "package_name": "com.cashmyproperty.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361450168870-eorv9cu7ldanqe9qsuum3akrhdq6pqeh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeDTpWalWaealxyd0fmrff2fwqTgzjxbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361450168870-eorv9cu7ldanqe9qsuum3akrhdq6pqeh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

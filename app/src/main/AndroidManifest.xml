@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cashmyproperty.app">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AlgoSoftTask">
+
+        <activity android:name=".View.Activities.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".View.Activities.MainActivity"></activity>
+        <activity android:name=".View.Activities.SignupActivity" />
+        <activity android:name=".View.Activities.OTPVerification_Activity" />
+        <activity android:name=".View.Activities.ForgotPassword_Activity" />
+        <activity android:name=".View.Activities.ResetPassword_Activity" />
+        <activity android:name=".View.DetailPage.DetailsActivity" />
+        <activity android:name=".View.DetailPage.SoldDetailsProperty_Activity" />
+        <activity android:name=".View.Activities.Navigation_Activity" />
+        <activity android:name=".View.DetailPage.BidDetailsProperty_Activity" />
+        <activity android:name=".View.DetailPage.SellerProp_DetailsActivity" />
+        <activity android:name=".View.Category.DataByCategory_Activity" />
+        <activity android:name=".View.Steps.Step_Second"/>
+        <activity android:name=".View.Steps.ThirdStep_Activity"/>
+        <activity android:name=".View.Steps.FourthStep_Activity"/>
+        <activity android:name=".View.Activities.Search_Activity"/>
+        <activity android:name=".View.DetailPage.PhotoView_Activity"/>
+        <activity android:name=".View.DetailPage.PurchaseDetailsProperty_Activity" />
+        <activity android:name=".View.Activities.Navigation_Seller" />
+
+        <service
+            android:name=".View.services.FirebaseMessageReceiver"
+            android:exported="false"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+
+
+</manifest>

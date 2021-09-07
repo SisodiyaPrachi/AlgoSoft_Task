@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:background="@drawable/ic_baseline_keyboard_backspace_24"
+                    ></ImageView>
+
+                <TextView
+                    android:id="@+id/txt_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginLeft="20dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/back">
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_baseline_share_24"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                </ImageView>
+
+               <!-- <ImageView
+                    android:id="@+id/fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/ic_baseline_favorite_border_24">
+
+                </ImageView>-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintRight_toRightOf="parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/con_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/image_details"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:sliderAnimationDuration="600"
+                android:scaleType="fitXY"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|top"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:sliderIndicatorSelectedColor="@color/yellow_color"
+                app:sliderIndicatorUnselectedColor="@color/gray_color"
+                app:sliderScrollTimeInSec="1" />
+
+            <TextView
+                android:id="@+id/prop_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="11sp"
+                app:layout_constraintTop_toBottomOf="@+id/image_details"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="@color/black"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/prop_id"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="@color/black"
+                android:text="Marina Suits-Dubai" />
+
+            <TextView
+                android:id="@+id/locat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="10dp"
+                android:drawablePadding="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                android:text="Apartment No. 706,Forte T1 under construction" />
+
+            <TextView
+                android:id="@+id/txt_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/locat"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="13sp"
+                app:layout_constraintRight_toLeftOf="@+id/txt_bidamount"
+                android:layout_margin="5dp"
+                android:textColor="@color/light_black"
+                android:padding="5dp"
+                android:text="Starting Amount:">
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_bidamount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Current Bid Amount"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                app:layout_constraintTop_toBottomOf="@+id/locat"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/txt_amount"
+                android:layout_margin="5dp"
+                android:textColor="@color/light_black"
+                android:padding="5dp"
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center"
+                android:text="AED 61,156"
+                android:background="@drawable/rounded_edittext"
+                app:layout_constraintRight_toLeftOf="@+id/bid_amount"
+                app:layout_constraintTop_toBottomOf="@+id/txt_amount"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/bid_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:text="AED 61,156"
+                app:layout_constraintLeft_toRightOf="@+id/amount"
+                android:background="@drawable/rounded_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/txt_bidamount"
+                app:layout_constraintRight_toRightOf="parent">
+
+            </TextView>
+
+           <!-- <TextView
+                android:id="@+id/txt_mybidamount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-medium"
+                app:layout_constraintTop_toBottomOf="@+id/amount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="@color/light_black"
+                android:text="My Bid Amount" />
+
+            <TextView
+                android:id="@+id/txt_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mybidamount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="@color/red"
+                android:text="Maximum bid must be in the multiple of AED5000" />
+
+
+            <TextView
+                android:id="@+id/bid_myammount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:background="@drawable/rounded_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/txt_note"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="AED  |  5,427,000" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="SUBMIT"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:gravity="center"
+                android:fontFamily="@font/open_sans_semibold"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/bid_myammount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:background="@drawable/rounded_edittext"
+                app:layout_constraintRight_toRightOf="parent">
+            </Button>
+-->
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="2dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/bid_amount"
+                app:layout_constraintLeft_toRightOf="@+id/property_details"
+                app:layout_constraintRight_toRightOf="parent">
+            </View>
+
+            <TextView
+                android:id="@+id/property_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/bid_amount"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/view"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textStyle="bold"
+                android:layout_margin="15dp"
+                android:text="Property Details">
+
+            </TextView>
+            <TextView
+                android:id="@+id/residential"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                app:layout_constraintTop_toBottomOf="@+id/property_details"
+                app:layout_constraintRight_toRightOf= "parent"
+                app:layout_constraintLeft_toRightOf="@+id/txt_property"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:text="Residential">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_property"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/property_details"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/residential"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/light_black"
+                android:layout_marginTop="15dp"
+                android:padding="5dp"
+                android:layout_marginLeft="20dp"
+                android:text="Property Details">
+
+            </TextView>
+
+
+
+            <TextView
+                android:id="@+id/txt_propertytype"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_property"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/property_type"
+                android:padding="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/light_black"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:text="Property Type">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/property_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                app:layout_constraintTop_toBottomOf="@+id/residential"
+                app:layout_constraintRight_toRightOf= "parent"
+                app:layout_constraintLeft_toRightOf="@+id/txt_propertytype"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:text="Apartment">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/light_black"
+                app:layout_constraintTop_toBottomOf="@+id/txt_propertytype"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/property_type"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:text="Address">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans_semibold"
+                app:layout_constraintTop_toBottomOf="@+id/property_type"
+                app:layout_constraintRight_toRightOf= "parent"
+                app:layout_constraintLeft_toRightOf="@+id/txt_city"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Dubai">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/city"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/layout"
+                android:padding="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/light_black"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:text="No of Bedrooms">
+
+            </TextView>
+            <TextView
+                android:id="@+id/layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/city"
+                app:layout_constraintRight_toRightOf= "parent"
+                app:layout_constraintLeft_toRightOf="@+id/txt_layout"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:text="4 BHK,3 Baths">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/location"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/light_black"
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:text="Location">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/layout"
+                app:layout_constraintRight_toRightOf= "parent"
+                app:layout_constraintLeft_toRightOf="@+id/txt_location"
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:padding="5dp"
+                android:text="Marina">
+
+            </TextView>
+
+            <!-- <Button
+                 android:id="@+id/btn_propdetails"
+                 android:layout_width="match_parent"
+                 android:layout_height="40dp"
+                 android:layout_margin="15dp"
+                 android:background="@drawable/rounded_edittext"
+                 android:fontFamily="@font/open_sans_semibold"
+                 app:layout_constraintLeft_toLeftOf="parent"
+                 app:layout_constraintRight_toRightOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/txt_location"
+                 android:text="View More Property Details">
+             </Button>-->
+
+            <TextView
+                android:id="@+id/txt_tour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_location"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:layout_margin="15dp"
+                android:text="Take a tour of your properties">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/txt_photos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tour"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium"
+                android:text="Through photos &amp; Videos">
+
+            </TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_photos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/txt_photos"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                >
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.cashmyproperty.app.View.Home.Home_Agent"
+        android:label="Home"
+        tools:layout="@layout/frag_villa"/>
+
+   <!-- <activity
+        android:id="@+id/nav_search"
+        android:name="com.cashmyproperty.app.View.Activities.Search_Activity"
+        android:label="Search"
+        tools:layout="@layout/search_activity"/>-->
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.cashmyproperty.app.View.Search.Search"
+        android:label="Search"
+        tools:layout="@layout/frag_homeagent"/>
+
+    <fragment
+        android:id="@+id/nav_category"
+        android:name="com.cashmyproperty.app.View.Category.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/nav_fragment"/>
+
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.cashmyproperty.app.View.Fav.Fav_Fragment"
+        android:label="Fav"
+        tools:layout="@layout/frag_fav"/>
+
+    <fragment
+        android:id="@+id/side_home"
+        android:name="com.cashmyproperty.app.View.Home.Home_Agent"
+        android:label="Home"
+        tools:layout="@layout/frag_villa" />
+
+
+    <fragment
+        android:id="@+id/bids"
+        android:name="com.cashmyproperty.app.View.Category.BidsFragment"
+        android:label="Bids"
+        tools:layout="@layout/frag_bids" />
+
+    <fragment
+        android:id="@+id/side_puchaseproperty"
+        android:name="com.cashmyproperty.app.View.Category.PurchaseProperty"
+        android:label="Purchase Property"
+        tools:layout="@layout/frag_purchase" />
+
+    <fragment
+        android:id="@+id/side_profile"
+        android:name="com.cashmyproperty.app.View.Profile.Profile_Fragment"
+        android:label="Profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/side_logout"
+        android:name="com.cashmyproperty.app.View.Logout"
+        android:label="Logout"
+        tools:layout=""/>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.cashmyproperty.app.View.Profile.Profile_Fragment"
+        android:label="Profile"
+        tools:layout="@layout/profile_fragment"/>
+
+    <fragment
+        android:id="@+id/fav"
+        android:name="com.cashmyproperty.app.View.Fav.Fav_Fragment"
+        android:label="Fav"
+        tools:layout="@layout/frag_fav"/>
+
+
+
+</navigation>

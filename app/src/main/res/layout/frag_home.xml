@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout"
+       >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <com.smarteist.autoimageslider.SliderView
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:sliderAnimationDuration="600"
+            app:sliderAutoCycleDirection="back_and_forth"
+            app:sliderIndicatorAnimationDuration="600"
+            app:sliderIndicatorEnabled="true"
+            app:sliderIndicatorGravity="center_horizontal|top"
+            app:sliderIndicatorMargin="15dp"
+            app:sliderIndicatorOrientation="horizontal"
+            app:sliderIndicatorPadding="3dp"
+            app:sliderIndicatorRadius="2dp"
+            app:sliderIndicatorSelectedColor="@color/yellow_color"
+            app:sliderIndicatorUnselectedColor="@color/gray_color"
+            app:sliderScrollTimeInSec="1" />
+
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="-50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_one_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="240dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Marina Suits" />
+
+                    <TextView
+                        android:id="@+id/locat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:drawablePadding="5dp"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                        android:text="Apartment No. 706,Forte T1 under construction" />
+
+                    <TextView
+                        android:id="@+id/lastbid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:paddingTop="8dp"
+                        android:paddingLeft="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginLeft="10dp"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/yellow_color"
+                        android:background="@drawable/rounded_edittext"
+                        android:text="Last Bid-AED 5,144,233" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100"
+                        android:layout_margin="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/light_black"
+                            app:layout_constraintTop_toBottomOf="@+id/lastbid"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:fontFamily="sans-serif-medium"
+                            android:textSize="13sp"
+                            android:gravity="center"
+                            android:layout_weight="50"
+                            app:layout_constraintRight_toLeftOf="@+id/txt_bidamount"
+                            android:padding="5dp"
+                            android:text="Starting Amount:">
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/txt_bidamount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Current Bid Amount:"
+                            android:textSize="13sp"
+                            android:layout_weight="50"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@color/light_black"
+                            app:layout_constraintTop_toBottomOf="@+id/lastbid"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintLeft_toRightOf="@+id/txt_amount"
+                            android:padding="5dp"
+                            >
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="100"
+                        android:layout_margin="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/amount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="50"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:textColor="@color/black"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:text="AED 61,156"
+                            android:background="@drawable/rounded_edittext"
+                            >
+
+                        </TextView>
+
+                        <TextView
+                            android:id="@+id/bid_amount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="50"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@color/black"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:text="AED 61,156"
+                            android:background="@drawable/rounded_edittext"
+                            >
+
+                        </TextView>
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/app_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:padding="2dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Approved Property"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/app_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="Your properties for Bidding"
+            android:layout_marginLeft="5dp"
+           >
+        </TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_biding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>
+
+</FrameLayout>

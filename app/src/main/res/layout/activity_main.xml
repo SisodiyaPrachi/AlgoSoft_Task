@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/txt_loginacc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login into your account."
+        android:fontFamily="@font/open_sans_semibold"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_logo"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </TextView>
+
+    <androidx.appcompat.widget.SwitchCompat
+       android:id="@+id/switch_btn"
+       android:layout_width="100dp"
+       android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+       android:textOff="Buyer"
+       android:textOn="Seller"
+       android:thumb="@drawable/thumb"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_loginacc"
+       app:showText="true"
+       app:track="@drawable/track"></androidx.appcompat.widget.SwitchCompat>
+
+   <!-- <TextView
+        android:id="@+id/seller"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:background="@drawable/rounded_edittext_color"
+        android:gravity="center"
+        android:text="Seller"
+        android:textColor="@color/black"
+        android:layout_marginRight="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_loginacc"></TextView>
+
+    <TextView
+        android:id="@+id/buyer"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:background="@drawable/rounded_edittext_yellow"
+        android:gravity="center"
+        android:text="Buyer"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@+id/seller"
+        app:layout_constraintTop_toBottomOf="@+id/txt_loginacc"></TextView>-->
+
+    <TextView
+        android:id="@+id/txt_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Address"
+        android:fontFamily="@font/open_sans_semibold"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/switch_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+    </TextView>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:ems="10"
+            android:padding="10dp"
+            android:textSize="15sp"
+            android:hint="Email Address"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableTint="@drawable/icon_selector"
+            android:background="@drawable/edittext_modified_states"
+            android:drawablePadding="5dp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/txt_email"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/txt_pss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:fontFamily="@font/open_sans_semibold"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintLeft_toLeftOf="parent"
+        >
+    </TextView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_edit_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:endIconMode="password_toggle"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_pss"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:imeOptions="actionGo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:background="@drawable/edittext_modified_states"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="5dp"
+            android:textSize="15sp"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/txt_forgot_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="#000"
+        android:padding="7dp"
+        android:onClick="forgot_pass"
+        android:textSize="15sp"
+        android:layout_margin="8dp"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@+id/text_edit_pwd"
+        app:layout_constraintRight_toRightOf="parent">
+    </TextView>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/txt_forgot_pass"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/rounded_edittext"
+        android:textColor="@color/black"
+        android:text="Login"
+        >
+    </Button>
+
+ <ImageView
+     android:id="@+id/icon"
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_marginTop="10dp"
+     app:layout_constraintTop_toBottomOf="@+id/btn_login"
+     app:layout_constraintLeft_toLeftOf="parent"
+     android:src="@drawable/login_bg"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintRight_toRightOf="parent">
+ </ImageView>
+
+
+    <!--<androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_btn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="20dp"
+        android:textOff="Buyer"
+        android:textOn="Seller"
+        android:thumb="@drawable/thumb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:showText="true"
+        app:track="@drawable/track"></androidx.appcompat.widget.SwitchCompat>-->
+
+    <TextView
+        android:id="@+id/txt_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textStyle="bold"
+        android:text="Don't have an account?">
+    </TextView>
+
+    <TextView
+        android:id="@+id/btn_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" SIGN UP"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/yellow_color"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/txt_account"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </TextView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+        <ImageView
+            android:id="@+id/cat_img"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY"
+            android:layout_height="150dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time left-02:30 min"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textStyle="bold"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_margin="10dp"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <LinearLayout
+            android:layout_marginTop="-50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/view_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:text="View Details"
+                    android:layout_marginTop="180dp"
+                    android:layout_marginRight="15dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:background="@drawable/rounded_edittext"
+                    android:layout_below="@+id/con_villa"
+                    android:layout_alignParentRight="true"
+                    android:textSize="11sp"
+
+                    >
+
+                </Button>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/prop_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                android:padding="2dp"
+                android:text="" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Marina Suits" />
+
+        <TextView
+            android:id="@+id/locat"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginLeft="5dp"
+            android:textSize="13sp"
+            android:fontFamily="sans-serif-medium"
+            android:drawableLeft="@drawable/ic_baseline_location_on_24"
+            android:text="Apartment No. 706" />
+
+        <TextView
+            android:id="@+id/bid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Last Bid-AED 5,144,233" />
+
+
+
+</LinearLayout>
+
+    </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

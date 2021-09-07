@@ -1,0 +1,85 @@
+package com.cashmyproperty.app.View.Response;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.cashmyproperty.app.R;
+import com.cashmyproperty.app.View.Adapter.BidProperty_Adapter;
+import com.cashmyproperty.app.View.DetailPage.PhotoView_Activity;
+
+import java.util.ArrayList;
+
+public class PurchaseProperty_Adapter extends RecyclerView.Adapter<PurchaseProperty_Adapter.ViewHolder> {
+
+    Context context;
+    BuyerPurchasePropertyDetails buyerPurchasePropertyDetails;
+    String image_base_url = "https://apkconnectlab.com/cmpdtest/";
+
+
+    public PurchaseProperty_Adapter(Context context,BuyerPurchasePropertyDetails buyerPurchasePropertyDetails){
+        this.context=context;
+        this.buyerPurchasePropertyDetails = buyerPurchasePropertyDetails;
+
+    }
+
+
+
+    @Override
+    public PurchaseProperty_Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.adapter_photos,parent,false);
+        return new PurchaseProperty_Adapter.ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PurchaseProperty_Adapter.ViewHolder holder, int position) {
+
+        Glide.with(context).load(image_base_url+buyerPurchasePropertyDetails.getImages().get(position).getPropertyImage())
+                .into(holder.cat_img);
+
+        ArrayList<String> img=new ArrayList<>();
+
+        for(int i=0;i<buyerPurchasePropertyDetails.getImages().size();i++)
+            img.add(buyerPurchasePropertyDetails.getImages().get(i).getPropertyImage());
+
+
+        holder.cat_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, PhotoView_Activity.class);
+                intent.putExtra("Photos", img);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
+    }
+
+    @Override
+    public int getItemCount()
+    {
+        return buyerPurchasePropertyDetails.getImages().size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+
+        ImageView cat_img;
+
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            cat_img = itemView.findViewById(R.id.cat_img);
+
+
+        }
+    }
+}
+

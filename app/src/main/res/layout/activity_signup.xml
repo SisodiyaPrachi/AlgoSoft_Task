@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.Activities.SignupActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/txt_createacc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create An Account."
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/open_sans_semibold"
+            android:textSize="17sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_logo"
+            app:layout_constraintRight_toRightOf="parent">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/seller"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:background="@drawable/rounded_edittext_color"
+            android:gravity="center"
+            android:text="Seller"
+            android:textColor="@color/black"
+            android:layout_marginRight="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_createacc"></TextView>
+
+        <TextView
+            android:id="@+id/buyer"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:background="@drawable/rounded_edittext_yellow"
+            android:gravity="center"
+            android:text="Buyer"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toRightOf="@+id/seller"
+            app:layout_constraintTop_toBottomOf="@+id/txt_createacc"></TextView>
+
+
+
+                <TextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Full Name"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:layout_margin="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/seller"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_fullname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Full Name"
+                    android:drawableLeft="@drawable/ic_baseline_person_outline_24"
+                    android:drawableTint="@drawable/icon_selector"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    android:background="@drawable/edittext_modified_states"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_name"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:id="@+id/txt_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_fullname"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:ems="10"
+                    android:hint="Email Address"
+                    android:textSize="15sp"
+                    android:drawableStart="@drawable/email"
+                    android:drawableTint="@drawable/icon_selector"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mail"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:background="@drawable/edittext_modified_states"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile No."
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_email"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:ems="10"
+                    android:maxLength="10"
+                    android:hint="Mobile No."
+                    android:textSize="15sp"
+                    android:padding="10dp"
+                    android:drawableStart="@drawable/ic_baseline_phone_android_24"
+                    android:drawableTint="@drawable/icon_selector"
+                    android:drawablePadding="5dp"
+                    android:inputType="phone"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_mobile"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:background="@drawable/edittext_modified_states"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_mobile"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    >
+                </TextView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_edit_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:endIconMode="password_toggle"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_pass"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:imeOptions="actionGo"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:background="@drawable/edittext_modified_states"
+                        android:drawableStart="@drawable/password"
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <TextView
+                    android:id="@+id/txt_con_pss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirm Password"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    app:layout_constraintTop_toBottomOf="@+id/text_edit_pwd"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    >
+                </TextView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/text_edit_conpwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:endIconMode="password_toggle"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_con_pss"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:imeOptions="actionGo"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_con_pwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:background="@drawable/edittext_modified_states"
+                        android:drawableStart="@drawable/password"
+                        android:drawablePadding="5dp"
+                        android:textSize="15sp"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:id="@+id/txt_reera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rera ID Number"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/text_edit_conpwd"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    >
+                </TextView>
+
+                <EditText
+                    android:id="@+id/edit_reraid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="Rera ID Number"
+                    android:drawableStart="@drawable/ic_baseline_article_24"
+                    android:drawableTint="@drawable/icon_selector"
+                    android:drawablePadding="5dp"
+                    android:padding="10dp"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_reera"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:background="@drawable/edittext_modified_states"
+
+                    android:singleLine="true"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_reraid"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_margin="10dp"
+                    android:id="@+id/edit_emir"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:text="Emirates ID/Password">
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/plus_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:tint="@color/yellow_color"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_add_circle_outline_24"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_reraid">
+                </ImageView>
+
+                <CheckBox
+                    android:id="@+id/chk_policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:buttonTint="@color/yellow_color"
+                    app:layout_constraintRight_toLeftOf="@+id/policy"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_emir"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    ></CheckBox>
+
+                <TextView
+                    android:id="@+id/policy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:text="I agree to the terms and conditions"
+                    app:layout_constraintLeft_toRightOf="@+id/chk_policy"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_emir"
+                    >
+
+                </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btn_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:gravity="center"
+        android:fontFamily="@font/open_sans_semibold"
+        app:layout_constraintTop_toBottomOf="@+id/scroll"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/rounded_edittext"
+        android:text="SIGN UP"
+        android:onClick="sign_up"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp">
+    </Button>
+
+    <ImageView
+        android:id="@+id/img_signup"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/sign_up_bg">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/txt_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Have an account? ">
+    </TextView>
+
+    <TextView
+        android:id="@+id/btn_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans_semibold"
+        android:text="LOGIN"
+        android:visibility="gone"
+        android:textColor="@color/yellow_color"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/txt_account"
+        app:layout_constraintBottom_toBottomOf="parent">
+    </TextView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
