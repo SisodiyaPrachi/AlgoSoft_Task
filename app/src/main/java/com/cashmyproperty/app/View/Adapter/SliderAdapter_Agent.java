@@ -40,11 +40,7 @@ public class SliderAdapter_Agent extends SliderViewAdapter<SliderAdapter_Agent.V
     @Override
     public void onBindViewHolder(@NonNull SliderAdapter_Agent.ViewHolder holder, int position) {
 
-
             Glide.with(context).load(image_base_url + slider.get(position)).into(holder.slider_img);
-
-
-
     }
 
     @Override

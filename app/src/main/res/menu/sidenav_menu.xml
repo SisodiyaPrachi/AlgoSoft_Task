@@ -9,12 +9,12 @@
 
     <item
         android:id="@+id/bids"
-        android:icon="@drawable/listing24"
+        android:icon="@drawable/listing"
         android:title="My Bids"/>
 
     <item
         android:id="@+id/side_puchaseproperty"
-        android:icon="@drawable/listing24"
+        android:icon="@drawable/listing"
         android:title="Purchased Property"/>
 
     <item
