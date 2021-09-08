@@ -109,6 +109,9 @@ public class BuyerPurchasePropertyDetails {
     @SerializedName("lastBiding")
     @Expose
     private String lastBiding;
+    @SerializedName("weblinkdetailPage")
+    @Expose
+    private String weblinkdetailPage;
 
     public Long getPropertyId() {
         return propertyId;
@@ -550,6 +553,13 @@ public class BuyerPurchasePropertyDetails {
     public BuyerPurchasePropertyDetails withLastBiding(String lastBiding) {
         this.lastBiding = lastBiding;
         return this;
+    }
+    public String getWeblinkdetailPage() {
+        return weblinkdetailPage;
+    }
+
+    public void setWeblinkdetailPage(String weblinkdetailPage) {
+        this.weblinkdetailPage = weblinkdetailPage;
     }
 
 }

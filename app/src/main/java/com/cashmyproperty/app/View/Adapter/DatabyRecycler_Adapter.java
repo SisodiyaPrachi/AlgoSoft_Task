@@ -49,13 +49,13 @@ public class DatabyRecycler_Adapter extends RecyclerView.Adapter<DatabyRecycler_
     @Override
     public void onBindViewHolder(@NonNull DatabyRecycler_Adapter.ViewHolder holder, int position) {
 
-        Glide.with(context).load(image_base_url+restPropertyData.get(0).getImages().get(0).getPropertyImage()).into(holder.cat_img);
+        Glide.with(context).load(image_base_url+restPropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.cat_img);
         holder.area.setText("Area- " + String.valueOf(restPropertyData.get(position).getTotalArea()+" "+
                 restPropertyData.get(position).getAreaType()));
         holder.propertyid.setText("Property ID #" + restPropertyData.get(position).getPropertySequenceId());
         holder.location.setText(restPropertyData.get(position).getAddress());
         holder.img_des.setText(restPropertyData.get(position).getPropertyName());
-        // holder.txt_startarea.setText("AED "+String.valueOf(restPropertyData.get(position).getStartAmount()));
+        holder.txt_startarea.setText("AED "+String.valueOf(restPropertyData.get(position).getStartAmount()));
         holder.current_buil.setText("AED " + String.valueOf(restPropertyData.get(position).getCurrentBiding()));
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +72,7 @@ public class DatabyRecycler_Adapter extends RecyclerView.Adapter<DatabyRecycler_
         holder.viewdetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, BidDetailsProperty_Activity.class);
+                Intent intent=new Intent(context, DetailsActivity.class);
                 intent.putExtra("propertyid",String.valueOf(restPropertyData.get(position).getPropertyId()));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
@@ -101,7 +101,7 @@ public class DatabyRecycler_Adapter extends RecyclerView.Adapter<DatabyRecycler_
             area = itemView.findViewById(R.id.area);
             location = itemView.findViewById(R.id.location);
             layout=itemView.findViewById(R.id.layout);
-            //txt_startarea = itemView.findViewById(R.id.txt_startamt);
+            txt_startarea = itemView.findViewById(R.id.txt_startamt);
             current_buil = itemView.findViewById(R.id.current_bid);
             img_des = itemView.findViewById(R.id.img_des);
             propertyid = itemView.findViewById(R.id.propertyid);

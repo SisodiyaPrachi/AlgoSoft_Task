@@ -3,12 +3,39 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_biddetails.xml" value="0.1" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_biddetails.xml" value="0.15" />
         <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_purchasedetails.xml" value="0.1716485507246377" />
         <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_sellerpropdetails.xml" value="0.1716485507246377" />
         <entry key="..\:/CashmyProperty/app/src/main/res/layout/act_solddetails.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/activity_navigation.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/adapter_bid.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/adapter_category.xml" value="0.15" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/adapter_purchase.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/adapter_resedential.xml" value="0.17192982456140352" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/adapter_villa.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/alert_bid.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/app_bar_buyermain.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/content_sellermain.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_bids.xml" value="0.1716485507246377" />
         <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_details.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_fav.xml" value="0.10733695652173914" />
         <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_home_agent.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_homeagent.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_purchase.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_sellerproperty.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_soldproperty.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/frag_villa.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/fragment_res.xml" value="0.1716485507246377" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/nav_fragment.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/nav_header.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/nav_seller.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/profile_fragment.xml" value="0.10733695652173914" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/layout/search_activity.xml" value="0.1" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/menu/bottom_nav_seller.xml" value="0.17192982456140352" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/menu/sidenav_menu.xml" value="0.17192982456140352" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/menu/sidenavseller_menu.xml" value="0.17192982456140352" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18552631578947368" />
+        <entry key="..\:/CashmyProperty/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.cashmyproperty.app.R;
+import com.cashmyproperty.app.View.Activities.Navigation_Activity;
 import com.cashmyproperty.app.View.Activities.Navigation_Seller;
 import com.cashmyproperty.app.View.Adapter.BidProperty_Adapter;
 import com.cashmyproperty.app.View.Adapter.SliderAdapter;
@@ -61,9 +62,11 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
     SliderAdapter sliderAdapter;
     SliderView image_details;
     Integer bid;
+    Integer curr_bid;
      int count=0;
     Dialog dialog;
     String bid_txt;
+    String link;
     ConstraintLayout con_details;
     private ProgressDialog progress;
     DataViewModel dataViewModel;
@@ -100,7 +103,7 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "Here is the share content body";
+                String shareBody = link;
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
@@ -118,14 +121,15 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 bid_txt = bid_myammount.getText().toString();
-                if (Integer.valueOf(bid_txt) % 5000 == 0) {
-                    submit_bid();
+                if ((Integer.valueOf(bid_txt) % 5000 == 0) && (Integer.valueOf(bid_txt)>=(curr_bid+5000))) {
+                        submit_bid();
                 } else {
                     show_bidalert();
                 }
             }
         });
     }
+
 
     private void show_bidalert() {
         dialog.setContentView(R.layout.alert_bid);
@@ -202,7 +206,7 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), Navigation_Seller.class);
+                Intent intent=new Intent(getApplicationContext(), Navigation_Activity.class);
                 startActivity(intent);
             }
         });
@@ -275,25 +279,33 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
                     BuyerBidPropertyDetails buyerBidPropertyDetails=result.getBuyerBidPropertyDetails();
                     List<Image> list=buyerBidPropertyDetails.getImages();
 
-                    ArrayList<String> slider=new ArrayList<>();
+                    if(list.size()>0) {
 
-                    for(int i=0;i<list.size();i++){
-                        slider.add(list.get(i).getPropertyImage());
+                        ArrayList<String> slider = new ArrayList<>();
+
+                        for (int i = 0; i < list.size(); i++) {
+                            slider.add(list.get(i).getPropertyImage());
+                        }
+
+                        get_slider(slider);
                     }
+                    else{
 
-                    get_slider(slider);
+                    }
 
                     name.setText(buyerBidPropertyDetails.getPropertyName());
                     locat.setText(buyerBidPropertyDetails.getAddress());
                     txt_title.setText(buyerBidPropertyDetails.getPropertyName());
                     prop_id.setText("Property ID #"+buyerBidPropertyDetails.getPropertySequenceId());
-                    amount.setText(buyerBidPropertyDetails.getStartAmount());
-                    bid_amount.setText(buyerBidPropertyDetails.getCurrentBiding());
+                    amount.setText("AED "+buyerBidPropertyDetails.getStartAmount());
+                    curr_bid=buyerBidPropertyDetails.getCurrentBiding();
+                    bid_amount.setText("AED "+buyerBidPropertyDetails.getCurrentBiding());
                     bid=buyerBidPropertyDetails.getMyBidAmount();
                     bid_myammount.setText(String.valueOf(buyerBidPropertyDetails.getMyBidAmount()));
                     residential.setText(buyerBidPropertyDetails.getKindOfPropertyName());
                     property_type.setText(buyerBidPropertyDetails.getPropertyTypeName());
                     city.setText(buyerBidPropertyDetails.getAddress());
+                    link=buyerBidPropertyDetails.getWeblinkdetailPage();
 
                     if(buyerBidPropertyDetails.getKindOfPropertyName().equalsIgnoreCase("Commercial")){
                         txt_layout.setVisibility(View.GONE);
@@ -375,11 +387,18 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bid_txt=bid_myammount.getText().toString();
-                bid_txt= String.valueOf(Integer.valueOf(bid_txt)-5000);
-                bid_myammount.setText(String.valueOf(bid_txt));
+                bid_txt = bid_myammount.getText().toString();
+
+                if(Integer.valueOf(bid_txt)>=(curr_bid+5000)) {
+                    bid_txt = String.valueOf(Integer.valueOf(bid_txt) - 5000);
+                    bid_myammount.setText(String.valueOf(bid_txt));
+                }
+                else{
+                    //Toast.makeText(getApplicationContext(),"no",Toast.LENGTH_SHORT).show();
+                }
             }
         });
+
     }
 
     private void get_photos(BuyerBidPropertyDetails buyerBidPropertyDetails) {

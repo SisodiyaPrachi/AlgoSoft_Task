@@ -20,7 +20,7 @@
             android:id="@+id/tool_bar"
             android:layout_width="match_parent"
             app:title=""
-            android:fontFamily="@font/open_sans_semibold"
+            android:textSize="16sp"
             android:layout_height="?attr/actionBarSize"
             app:titleCentered="true" />
 

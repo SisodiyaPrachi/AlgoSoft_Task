@@ -49,11 +49,11 @@ public class SoldAdapter_Recycler extends RecyclerView.Adapter<SoldAdapter_Recyc
     @Override
     public void onBindViewHolder(@NonNull SoldAdapter_Recycler.ViewHolder holder, int position) {
 
-        Glide.with(context).load(image_base_url+soldPropertyData.get(0).getImages().get(0).getPropertyImage()).into(holder.imageView);
+        Glide.with(context).load(image_base_url+soldPropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.imageView);
         holder.propertyid.setText("Property ID #"+soldPropertyData.get(position).getPropertySequenceId());
         holder.area.setText("Area- "+String.valueOf(soldPropertyData.get(position).getTotalArea())+" "+soldPropertyData.get(position).getAreaType());
         holder.location.setText(String.valueOf(soldPropertyData.get(position).getAddress()));
-        holder.txt_lastbid.setText(soldPropertyData.get(position).getLastBid());
+        holder.txt_lastbid.setText("AED "+soldPropertyData.get(position).getLastBid());
         holder.img_des.setText(String.valueOf(soldPropertyData.get(position).getPropertyName()));
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -43,7 +43,7 @@ public class SubCategory_Adapter extends RecyclerView.Adapter<SubCategory_Adapte
     public void onBindViewHolder(@NonNull SubCategory_Adapter.ViewHolder holder, int position) {
         Glide.with(context).load(image_base_url+subCategoryData.get(position).getSubCategoryAppImage()).into(holder.cat_img);
         holder.property_name.setText(subCategoryData.get(position).getSubCategoryName());
-        holder.propertycount.setText((String.valueOf(subCategoryData.get(position).getPropertyCount()))+"+ Properties");
+        holder.propertycount.setText((String.valueOf(subCategoryData.get(position).getPropertyCount()))+" Properties");
 
         holder.cat_img.setOnClickListener(new View.OnClickListener() {
             @Override

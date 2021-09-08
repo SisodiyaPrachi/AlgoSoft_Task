@@ -118,7 +118,7 @@ public class HomeFragment_Seller extends Fragment {
 
                             name.setText(firstPropertyData.getPropertyName());
                              locat.setText(firstPropertyData.getAddress());
-                            lastbid.setText("Last Bid Amount- " + firstPropertyData.getLastBid());
+                            lastbid.setText("Last Bid Amount- AED " + firstPropertyData.getLastBid());
                             amount.setText("AED "+firstPropertyData.getStartAmount());
                             bid_amount.setText("AED "+firstPropertyData.getCurrentBidAmount());
 

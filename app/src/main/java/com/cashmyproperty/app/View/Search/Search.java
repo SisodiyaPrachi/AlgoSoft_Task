@@ -4,19 +4,15 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
@@ -33,16 +29,13 @@ import com.cashmyproperty.app.View.Activities.Navigation_Seller;
 import com.cashmyproperty.app.View.Adapter.ActClosing_Recycler;
 import com.cashmyproperty.app.View.Adapter.ExplorePopular_Recycler;
 import com.cashmyproperty.app.View.Adapter.Recomm_Recycler;
-import com.cashmyproperty.app.View.Adapter.SearchRecycler_Adapter;
 import com.cashmyproperty.app.View.Adapter.SliderAdapter_Agent;
 import com.cashmyproperty.app.View.Adapter.SliderAdapter_Recyler;
 import com.cashmyproperty.app.View.DetailPage.DetailsActivity;
-import com.cashmyproperty.app.View.Home.HomeFragment_Agent;
 import com.cashmyproperty.app.View.Response.AuctionclosingProperty;
 import com.cashmyproperty.app.View.Response.ExplorepopularArea;
 import com.cashmyproperty.app.View.Response.HometopProperty;
 import com.cashmyproperty.app.View.Response.Image;
-import com.cashmyproperty.app.View.Response.PropertyDatum;
 import com.cashmyproperty.app.View.Response.RecommendedProperty;
 import com.cashmyproperty.app.View.Response.Result;
 import com.cashmyproperty.app.View.Utility.PreferenceUtils;
@@ -177,7 +170,7 @@ public class Search extends Fragment {
         rec_recommended.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
         cv_one_login.setVisibility(View.GONE);
-        amount.setVisibility(View.GONE);
+
 
         searchbar = view.findViewById(R.id.search_bar);
         img_back = view.findViewById(R.id.img_back);
@@ -203,7 +196,7 @@ public class Search extends Fragment {
 
 
                     List<HometopProperty> hometopProperty = result.getHometopProperty();
-                    List<Image> images = hometopProperty.get(0).getImages();
+                    //List<Image> images = hometopProperty.get(0).getImages();
                     List<AuctionclosingProperty> auctionclosingProperties = result.getAuctionclosingProperty();
                     List<ExplorepopularArea> explorepopularAreas = result.getExplorepopularArea();
                     List<RecommendedProperty> recommendedProperties = result.getRecommendedProperty();
@@ -213,7 +206,7 @@ public class Search extends Fragment {
                         name.setText(hometopProperty.get(0).getPropertyName());
                         locat.setText(hometopProperty.get(0).getAddress());
                         lastbid.setText("Last Bid Amount-" + hometopProperty.get(0).getLastBidAmount());
-                        //amount.setText(hometopProperty.get(0).getStartAmount());
+                        amount.setText(hometopProperty.get(0).getStartAmount());
                         bid_amount.setText(hometopProperty.get(0).getLastBidAmount());
 
                         cv_one_login.setOnClickListener(new View.OnClickListener() {

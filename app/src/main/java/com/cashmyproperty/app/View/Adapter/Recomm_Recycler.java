@@ -51,7 +51,7 @@ public class Recomm_Recycler extends RecyclerView.Adapter<Recomm_Recycler.ViewHo
     @Override
     public void onBindViewHolder(@NonNull Recomm_Recycler.ViewHolder holder, int position) {
 
-        Glide.with(context).load(image_base_url+recommendedProperties.get(0).getImages().get(0).getPropertyImage()).into(holder.cat_img);
+        Glide.with(context).load(image_base_url+recommendedProperties.get(position).getImages().get(0).getPropertyImage()).into(holder.cat_img);
         holder.prop_id.setText("Property ID # "+recommendedProperties.get(position).getPropertySequenceId());
         holder.name.setText(recommendedProperties.get(position).getPropertyName());
         holder.locat.setText(String.valueOf(recommendedProperties.get(position).getAddress()));

@@ -42,6 +42,7 @@ public class SellerProp_DetailsActivity extends AppCompatActivity {
     DataViewModel dataViewModel;
     ConstraintLayout con_details;
     private ProgressDialog progress;
+    String link;
     String image_base_url = "https://apkconnectlab.com/cmpdtest/";
     String propertyid="";
 
@@ -52,6 +53,7 @@ public class SellerProp_DetailsActivity extends AppCompatActivity {
 
         initviews();
         propertyid=getIntent().getStringExtra("propertyid");
+       // Toast.makeText(getApplicationContext(),propertyid,Toast.LENGTH_SHORT).show();
         dataViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +68,7 @@ public class SellerProp_DetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "Here is the share content body";
+                String shareBody = link;
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
@@ -104,23 +106,30 @@ public class SellerProp_DetailsActivity extends AppCompatActivity {
                     MypropertyDetailData mypropertyDetailData=result.getMypropertyDetailData();
                     List<Image> list=mypropertyDetailData.getImages();
 
-                    ArrayList<String> slider=new ArrayList<>();
+                    if(list.size()>0) {
 
-                    for(int i=0;i<list.size();i++){
-                        slider.add(list.get(i).getPropertyImage());
+                        ArrayList<String> slider = new ArrayList<>();
+
+                        for (int i = 0; i < list.size(); i++) {
+                            slider.add(list.get(i).getPropertyImage());
+                        }
+
+                        get_slider(slider);
                     }
+                    else{
 
-                    get_slider(slider);
+                    }
 
                     name.setText(mypropertyDetailData.getPropertyName());
                     locat.setText(mypropertyDetailData.getAddress());
-                    amount.setText(mypropertyDetailData.getStartAmount());
+                    amount.setText("AED "+mypropertyDetailData.getStartAmount());
                     txt_title.setText(mypropertyDetailData.getPropertyName());
-                    bid_amount.setText(mypropertyDetailData.getCurrentBidAmount());
+                    bid_amount.setText("AED "+mypropertyDetailData.getCurrentBidAmount());
                     prop_id.setText("Property ID #"+mypropertyDetailData.getPropertySequenceId());
                     residential.setText(mypropertyDetailData.getKindOfPropertyName());
                     property_type.setText(mypropertyDetailData.getPropertyTypeName());
                     city.setText(mypropertyDetailData.getAddress());
+                    link=mypropertyDetailData.getWeblinkdetailPage();
 
                     if(mypropertyDetailData.getKindOfPropertyName().equalsIgnoreCase("Commercial")){
                         txt_layout.setVisibility(View.GONE);
@@ -182,8 +191,6 @@ public class SellerProp_DetailsActivity extends AppCompatActivity {
         layout=findViewById(R.id.layout);
         location=findViewById(R.id.location);
 
-        txt_amount.setVisibility(View.GONE);
-        amount.setVisibility(View.GONE);
 
         rec_photos=findViewById(R.id.rec_photos);
         con_details.setVisibility(View.GONE);

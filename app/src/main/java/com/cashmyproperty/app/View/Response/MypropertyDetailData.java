@@ -16,9 +16,6 @@ public class MypropertyDetailData {
     @SerializedName("property_sequence_id")
     @Expose
     private String propertySequenceId;
-    @SerializedName("property_name")
-    @Expose
-    private String propertyName;
     @SerializedName("kind_of_property")
     @Expose
     private Long kindOfProperty;
@@ -67,6 +64,9 @@ public class MypropertyDetailData {
     @SerializedName("property_holder")
     @Expose
     private Long propertyHolder;
+    @SerializedName("property_name")
+    @Expose
+    private String propertyName;
     @SerializedName("title_deed")
     @Expose
     private String titleDeed;
@@ -79,6 +79,30 @@ public class MypropertyDetailData {
     @SerializedName("property_noc")
     @Expose
     private String propertyNoc;
+    @SerializedName("auction_start_bid_amount")
+    @Expose
+    private Integer auctionStartBidAmount;
+    @SerializedName("dewa_no")
+    @Expose
+    private String dewaNo;
+    @SerializedName("expected_price")
+    @Expose
+    private String expectedPrice;
+    @SerializedName("gas_no")
+    @Expose
+    private String gasNo;
+    @SerializedName("current_bid_amount")
+    @Expose
+    private Integer currentBidAmount;
+    @SerializedName("current_bid_seller_id")
+    @Expose
+    private Long currentBidSellerId;
+    @SerializedName("last_bid_amount")
+    @Expose
+    private Integer lastBidAmount;
+    @SerializedName("last_bid_seller_id")
+    @Expose
+    private Long lastBidSellerId;
     @SerializedName("kind_of_property_id")
     @Expose
     private Long kindOfPropertyId;
@@ -108,10 +132,10 @@ public class MypropertyDetailData {
     private List<Image> images = null;
     @SerializedName("startAmount")
     @Expose
-    private String startAmount;
-    @SerializedName("currentBidAmount")
+    private Integer startAmount;
+    @SerializedName("weblinkdetailPage")
     @Expose
-    private String currentBidAmount;
+    private String weblinkdetailPage;
 
     public Long getPropertyId() {
         return propertyId;
@@ -119,11 +143,6 @@ public class MypropertyDetailData {
 
     public void setPropertyId(Long propertyId) {
         this.propertyId = propertyId;
-    }
-
-    public MypropertyDetailData withPropertyId(Long propertyId) {
-        this.propertyId = propertyId;
-        return this;
     }
 
     public Long getSellerId() {
@@ -134,35 +153,12 @@ public class MypropertyDetailData {
         this.sellerId = sellerId;
     }
 
-    public MypropertyDetailData withSellerId(Long sellerId) {
-        this.sellerId = sellerId;
-        return this;
-    }
-
     public String getPropertySequenceId() {
         return propertySequenceId;
     }
 
     public void setPropertySequenceId(String propertySequenceId) {
         this.propertySequenceId = propertySequenceId;
-    }
-
-    public MypropertyDetailData withPropertySequenceId(String propertySequenceId) {
-        this.propertySequenceId = propertySequenceId;
-        return this;
-    }
-
-    public String getPropertyName() {
-        return propertyName;
-    }
-
-    public void setPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-    }
-
-    public MypropertyDetailData withPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-        return this;
     }
 
     public Long getKindOfProperty() {
@@ -173,22 +169,12 @@ public class MypropertyDetailData {
         this.kindOfProperty = kindOfProperty;
     }
 
-    public MypropertyDetailData withKindOfProperty(Long kindOfProperty) {
-        this.kindOfProperty = kindOfProperty;
-        return this;
-    }
-
     public Long getPropertyType() {
         return propertyType;
     }
 
     public void setPropertyType(Long propertyType) {
         this.propertyType = propertyType;
-    }
-
-    public MypropertyDetailData withPropertyType(Long propertyType) {
-        this.propertyType = propertyType;
-        return this;
     }
 
     public Integer getCompletePropertyStep() {
@@ -199,22 +185,12 @@ public class MypropertyDetailData {
         this.completePropertyStep = completePropertyStep;
     }
 
-    public MypropertyDetailData withCompletePropertyStep(Integer completePropertyStep) {
-        this.completePropertyStep = completePropertyStep;
-        return this;
-    }
-
     public String getPropertyAssigned() {
         return propertyAssigned;
     }
 
     public void setPropertyAssigned(String propertyAssigned) {
         this.propertyAssigned = propertyAssigned;
-    }
-
-    public MypropertyDetailData withPropertyAssigned(String propertyAssigned) {
-        this.propertyAssigned = propertyAssigned;
-        return this;
     }
 
     public String getBasicDetailsVerify() {
@@ -225,22 +201,12 @@ public class MypropertyDetailData {
         this.basicDetailsVerify = basicDetailsVerify;
     }
 
-    public MypropertyDetailData withBasicDetailsVerify(String basicDetailsVerify) {
-        this.basicDetailsVerify = basicDetailsVerify;
-        return this;
-    }
-
     public String getPropertyDetailsVerify() {
         return propertyDetailsVerify;
     }
 
     public void setPropertyDetailsVerify(String propertyDetailsVerify) {
         this.propertyDetailsVerify = propertyDetailsVerify;
-    }
-
-    public MypropertyDetailData withPropertyDetailsVerify(String propertyDetailsVerify) {
-        this.propertyDetailsVerify = propertyDetailsVerify;
-        return this;
     }
 
     public String getPropertyImageVerify() {
@@ -251,22 +217,12 @@ public class MypropertyDetailData {
         this.propertyImageVerify = propertyImageVerify;
     }
 
-    public MypropertyDetailData withPropertyImageVerify(String propertyImageVerify) {
-        this.propertyImageVerify = propertyImageVerify;
-        return this;
-    }
-
     public String getPropertyVerified() {
         return propertyVerified;
     }
 
     public void setPropertyVerified(String propertyVerified) {
         this.propertyVerified = propertyVerified;
-    }
-
-    public MypropertyDetailData withPropertyVerified(String propertyVerified) {
-        this.propertyVerified = propertyVerified;
-        return this;
     }
 
     public Integer getCreationDate() {
@@ -277,22 +233,12 @@ public class MypropertyDetailData {
         this.creationDate = creationDate;
     }
 
-    public MypropertyDetailData withCreationDate(Integer creationDate) {
-        this.creationDate = creationDate;
-        return this;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public MypropertyDetailData withAddress(String address) {
-        this.address = address;
-        return this;
     }
 
     public String getAreaType() {
@@ -303,22 +249,12 @@ public class MypropertyDetailData {
         this.areaType = areaType;
     }
 
-    public MypropertyDetailData withAreaType(String areaType) {
-        this.areaType = areaType;
-        return this;
-    }
-
     public String getCurrentLocation() {
         return currentLocation;
     }
 
     public void setCurrentLocation(String currentLocation) {
         this.currentLocation = currentLocation;
-    }
-
-    public MypropertyDetailData withCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
-        return this;
     }
 
     public String getEidOrPassport() {
@@ -329,22 +265,12 @@ public class MypropertyDetailData {
         this.eidOrPassport = eidOrPassport;
     }
 
-    public MypropertyDetailData withEidOrPassport(String eidOrPassport) {
-        this.eidOrPassport = eidOrPassport;
-        return this;
-    }
-
     public Long getLocation() {
         return location;
     }
 
     public void setLocation(Long location) {
         this.location = location;
-    }
-
-    public MypropertyDetailData withLocation(Long location) {
-        this.location = location;
-        return this;
     }
 
     public Integer getNoOfBed() {
@@ -355,11 +281,6 @@ public class MypropertyDetailData {
         this.noOfBed = noOfBed;
     }
 
-    public MypropertyDetailData withNoOfBed(Integer noOfBed) {
-        this.noOfBed = noOfBed;
-        return this;
-    }
-
     public Long getPropertyHolder() {
         return propertyHolder;
     }
@@ -368,9 +289,12 @@ public class MypropertyDetailData {
         this.propertyHolder = propertyHolder;
     }
 
-    public MypropertyDetailData withPropertyHolder(Long propertyHolder) {
-        this.propertyHolder = propertyHolder;
-        return this;
+    public String getPropertyName() {
+        return propertyName;
+    }
+
+    public void setPropertyName(String propertyName) {
+        this.propertyName = propertyName;
     }
 
     public String getTitleDeed() {
@@ -381,22 +305,12 @@ public class MypropertyDetailData {
         this.titleDeed = titleDeed;
     }
 
-    public MypropertyDetailData withTitleDeed(String titleDeed) {
-        this.titleDeed = titleDeed;
-        return this;
-    }
-
     public Integer getTotalArea() {
         return totalArea;
     }
 
     public void setTotalArea(Integer totalArea) {
         this.totalArea = totalArea;
-    }
-
-    public MypropertyDetailData withTotalArea(Integer totalArea) {
-        this.totalArea = totalArea;
-        return this;
     }
 
     public String getDescription() {
@@ -407,11 +321,6 @@ public class MypropertyDetailData {
         this.description = description;
     }
 
-    public MypropertyDetailData withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
     public String getPropertyNoc() {
         return propertyNoc;
     }
@@ -420,9 +329,68 @@ public class MypropertyDetailData {
         this.propertyNoc = propertyNoc;
     }
 
-    public MypropertyDetailData withPropertyNoc(String propertyNoc) {
-        this.propertyNoc = propertyNoc;
-        return this;
+    public Integer getAuctionStartBidAmount() {
+        return auctionStartBidAmount;
+    }
+
+    public void setAuctionStartBidAmount(Integer auctionStartBidAmount) {
+        this.auctionStartBidAmount = auctionStartBidAmount;
+    }
+
+    public String getDewaNo() {
+        return dewaNo;
+    }
+
+    public void setDewaNo(String dewaNo) {
+        this.dewaNo = dewaNo;
+    }
+
+    public String getExpectedPrice() {
+        return expectedPrice;
+    }
+
+    public void setExpectedPrice(String expectedPrice) {
+        this.expectedPrice = expectedPrice;
+    }
+
+    public String getGasNo() {
+        return gasNo;
+    }
+
+    public void setGasNo(String gasNo) {
+        this.gasNo = gasNo;
+    }
+
+    public Integer getCurrentBidAmount() {
+        return currentBidAmount;
+    }
+
+    public void setCurrentBidAmount(Integer currentBidAmount) {
+        this.currentBidAmount = currentBidAmount;
+    }
+
+    public Long getCurrentBidSellerId() {
+        return currentBidSellerId;
+    }
+
+    public void setCurrentBidSellerId(Long currentBidSellerId) {
+        this.currentBidSellerId = currentBidSellerId;
+    }
+
+    public Integer getLastBidAmount() {
+        return lastBidAmount;
+    }
+
+    public void setLastBidAmount(Integer lastBidAmount) {
+        this.lastBidAmount = lastBidAmount;
+    }
+
+    public Long getLastBidSellerId() {
+        return lastBidSellerId;
+    }
+
+    public void setLastBidSellerId(Long lastBidSellerId) {
+        this.lastBidSellerId = lastBidSellerId;
     }
 
     public Long getKindOfPropertyId() {
@@ -433,22 +401,12 @@ public class MypropertyDetailData {
         this.kindOfPropertyId = kindOfPropertyId;
     }
 
-    public MypropertyDetailData withKindOfPropertyId(Long kindOfPropertyId) {
-        this.kindOfPropertyId = kindOfPropertyId;
-        return this;
-    }
-
     public String getKindOfPropertyName() {
         return kindOfPropertyName;
     }
 
     public void setKindOfPropertyName(String kindOfPropertyName) {
         this.kindOfPropertyName = kindOfPropertyName;
-    }
-
-    public MypropertyDetailData withKindOfPropertyName(String kindOfPropertyName) {
-        this.kindOfPropertyName = kindOfPropertyName;
-        return this;
     }
 
     public Long getPropertyTypeId() {
@@ -459,22 +417,12 @@ public class MypropertyDetailData {
         this.propertyTypeId = propertyTypeId;
     }
 
-    public MypropertyDetailData withPropertyTypeId(Long propertyTypeId) {
-        this.propertyTypeId = propertyTypeId;
-        return this;
-    }
-
     public String getPropertyTypeName() {
         return propertyTypeName;
     }
 
     public void setPropertyTypeName(String propertyTypeName) {
         this.propertyTypeName = propertyTypeName;
-    }
-
-    public MypropertyDetailData withPropertyTypeName(String propertyTypeName) {
-        this.propertyTypeName = propertyTypeName;
-        return this;
     }
 
     public Long getLocationId() {
@@ -485,22 +433,12 @@ public class MypropertyDetailData {
         this.locationId = locationId;
     }
 
-    public MypropertyDetailData withLocationId(Long locationId) {
-        this.locationId = locationId;
-        return this;
-    }
-
     public String getLocationName() {
         return locationName;
     }
 
     public void setLocationName(String locationName) {
         this.locationName = locationName;
-    }
-
-    public MypropertyDetailData withLocationName(String locationName) {
-        this.locationName = locationName;
-        return this;
     }
 
     public Long getPropertyHolderId() {
@@ -511,22 +449,12 @@ public class MypropertyDetailData {
         this.propertyHolderId = propertyHolderId;
     }
 
-    public MypropertyDetailData withPropertyHolderId(Long propertyHolderId) {
-        this.propertyHolderId = propertyHolderId;
-        return this;
-    }
-
     public String getPropertyHolderName() {
         return propertyHolderName;
     }
 
     public void setPropertyHolderName(String propertyHolderName) {
         this.propertyHolderName = propertyHolderName;
-    }
-
-    public MypropertyDetailData withPropertyHolderName(String propertyHolderName) {
-        this.propertyHolderName = propertyHolderName;
-        return this;
     }
 
     public List<Image> getImages() {
@@ -537,34 +465,19 @@ public class MypropertyDetailData {
         this.images = images;
     }
 
-    public MypropertyDetailData withImages(List<Image> images) {
-        this.images = images;
-        return this;
-    }
-
-    public String getStartAmount() {
+    public Integer getStartAmount() {
         return startAmount;
     }
 
-    public void setStartAmount(String startAmount) {
+    public void setStartAmount(Integer startAmount) {
         this.startAmount = startAmount;
     }
 
-    public MypropertyDetailData withStartAmount(String startAmount) {
-        this.startAmount = startAmount;
-        return this;
+    public String getWeblinkdetailPage() {
+        return weblinkdetailPage;
     }
 
-    public String getCurrentBidAmount() {
-        return currentBidAmount;
-    }
-
-    public void setCurrentBidAmount(String currentBidAmount) {
-        this.currentBidAmount = currentBidAmount;
-    }
-
-    public MypropertyDetailData withCurrentBidAmount(String currentBidAmount) {
-        this.currentBidAmount = currentBidAmount;
-        return this;
+    public void setWeblinkdetailPage(String weblinkdetailPage) {
+        this.weblinkdetailPage = weblinkdetailPage;
     }
 }

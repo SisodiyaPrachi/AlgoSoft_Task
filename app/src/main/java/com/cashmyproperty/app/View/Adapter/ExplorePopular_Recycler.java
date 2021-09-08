@@ -44,7 +44,7 @@ public class ExplorePopular_Recycler extends RecyclerView.Adapter<ExplorePopular
     @Override
     public void onBindViewHolder(@NonNull ExplorePopular_Recycler.ViewHolder holder, int position) {
 
-        Glide.with(context).load(image_base_url+explorepopularAreas.get(0).getImages().get(0).getPropertyImage()).into(holder.imageView);
+        Glide.with(context).load(image_base_url+explorepopularAreas.get(position).getImages().get(0).getPropertyImage()).into(holder.imageView);
         holder.txt_img.setText(explorepopularAreas.get(position).getLocationName());
 
         holder.imageView.setOnClickListener(new View.OnClickListener() {

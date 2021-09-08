@@ -26,7 +26,6 @@
                 android:layout_height="wrap_content">
 
 
-
                 <ImageView
                     android:id="@+id/back"
                     android:layout_width="wrap_content"
@@ -38,12 +37,14 @@
 
                 <TextView
                     android:id="@+id/txt_title"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text=""
+                    app:layout_constraintRight_toLeftOf="@+id/share"
                     android:layout_marginLeft="20dp"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:gravity="center"
                     android:fontFamily="@font/open_sans_semibold"
                     android:textColor="@color/black"
                     app:layout_constraintTop_toTopOf="parent"
@@ -86,12 +87,10 @@
         app:layout_constraintRight_toRightOf="parent">
 
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/con_details"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
 
 
             <com.smarteist.autoimageslider.SliderView
@@ -464,7 +463,7 @@
 
             </TextView>
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/txt_photos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -474,14 +473,14 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="Through photos &amp; Videos">
 
-            </TextView>
+            </TextView>-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_photos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                app:layout_constraintTop_toBottomOf="@+id/txt_photos"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tour"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
 

@@ -108,6 +108,9 @@ public class SellerSoldPropertyDetails {
     @SerializedName("lastAmount")
     @Expose
     private String lastAmount;
+    @SerializedName("weblinkdetailPage")
+    @Expose
+    private String weblinkdetailPage;
 
     public Long getPropertyId() {
         return propertyId;
@@ -549,5 +552,12 @@ public class SellerSoldPropertyDetails {
     public SellerSoldPropertyDetails withLastAmount(String lastAmount) {
         this.lastAmount = lastAmount;
         return this;
+    }
+    public String getWeblinkdetailPage() {
+        return weblinkdetailPage;
+    }
+
+    public void setWeblinkdetailPage(String weblinkdetailPage) {
+        this.weblinkdetailPage = weblinkdetailPage;
     }
 }

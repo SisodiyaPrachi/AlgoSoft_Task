@@ -51,7 +51,7 @@ public class SellerProperty_Recycler extends RecyclerView.Adapter<SellerProperty
 
         String prop_ver=mypropertyData.get(position).getPropertyVerified();
 
-        Glide.with(context).load(image_base_url+mypropertyData.get(0).getImages().get(0).getPropertyImage()).into(holder.imageView);
+        Glide.with(context).load(image_base_url+mypropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.imageView);
         if(prop_ver.equalsIgnoreCase("IR") || prop_ver.equalsIgnoreCase("AR")){
             holder.img_verify.setVisibility(View.VISIBLE);
             holder.img_verify.setBackgroundResource(R.drawable.reject);

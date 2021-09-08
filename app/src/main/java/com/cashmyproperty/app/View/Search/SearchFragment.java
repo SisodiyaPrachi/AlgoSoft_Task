@@ -1,15 +1,11 @@
 package com.cashmyproperty.app.View.Search;
 
 import android.app.ProgressDialog;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.Toast;
 
@@ -17,8 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,9 +21,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cashmyproperty.app.View.Activities.Navigation_Activity;
 import com.cashmyproperty.app.View.Activities.Navigation_Seller;
 import com.cashmyproperty.app.R;
-import com.cashmyproperty.app.View.Activities.Search_Activity;
-import com.cashmyproperty.app.View.Category.SubCategoryFragment;
-import com.cashmyproperty.app.View.Home.HomeFragment_Agent;
 import com.cashmyproperty.app.View.Response.PropertyDatum;
 import com.cashmyproperty.app.View.Response.Result;
 import com.cashmyproperty.app.View.Adapter.SearchRecycler_Adapter;

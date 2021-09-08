@@ -1,6 +1,7 @@
 package com.cashmyproperty.app.View.Adapter;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,12 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.cashmyproperty.app.R;
 import com.cashmyproperty.app.View.Response.CategoryDatum;
 import com.cashmyproperty.app.View.Response.PropertyType;
@@ -48,10 +55,9 @@ import java.util.List;
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-
         Glide.with(context).load(image_base_url+categoryData.get(position).getCategoryAppImage()).into(holder.cat_img);
         holder.property_name.setText(categoryData.get(position).getCategoryName());
-        holder.propertycount.setText((String.valueOf(categoryData.get(position).getPropertyCount()))+"+ Properties");
+        holder.propertycount.setText((String.valueOf(categoryData.get(position).getPropertyCount()))+" Properties");
 
         holder.cat_img.setOnClickListener(new View.OnClickListener() {
             @Override

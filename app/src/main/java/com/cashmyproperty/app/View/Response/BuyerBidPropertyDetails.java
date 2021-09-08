@@ -111,10 +111,13 @@ public class BuyerBidPropertyDetails {
     private String startAmount;
     @SerializedName("currentBiding")
     @Expose
-    private String currentBiding;
+    private Integer currentBiding;
     @SerializedName("MyBidAmount")
     @Expose
     private Integer myBidAmount;
+    @SerializedName("weblinkdetailPage")
+    @Expose
+    private String weblinkdetailPage;
 
     public Long getPropertyId() {
         return propertyId;
@@ -558,15 +561,15 @@ public class BuyerBidPropertyDetails {
         return this;
     }
 
-    public String getCurrentBiding() {
+    public Integer getCurrentBiding() {
         return currentBiding;
     }
 
-    public void setCurrentBiding(String currentBiding) {
+    public void setCurrentBiding(Integer currentBiding) {
         this.currentBiding = currentBiding;
     }
 
-    public BuyerBidPropertyDetails withCurrentBiding(String currentBiding) {
+    public BuyerBidPropertyDetails withCurrentBiding(Integer currentBiding) {
         this.currentBiding = currentBiding;
         return this;
     }
@@ -583,6 +586,12 @@ public class BuyerBidPropertyDetails {
         this.myBidAmount = myBidAmount;
         return this;
     }
+    public String getWeblinkdetailPage() {
+        return weblinkdetailPage;
+    }
 
+    public void setWeblinkdetailPage(String weblinkdetailPage) {
+        this.weblinkdetailPage = weblinkdetailPage;
+    }
 
 }

@@ -53,6 +53,7 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
     String propertyid="";
     ConstraintLayout con_details;
     int count=0;
+    String link;
     DataViewModel dataViewModel;
     private ProgressDialog progress;
     String image_base_url = "https://apkconnectlab.com/cmpdtest/";
@@ -89,7 +90,7 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "Here is the share content body";
+                String shareBody = link;
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
@@ -120,13 +121,19 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
                     BuyerPurchasePropertyDetails buyerPurchasePropertyDetails = result.getBuyerPurchasePropertyDetails();
                     List<Image> list = buyerPurchasePropertyDetails.getImages();
 
-                    ArrayList<String> slider=new ArrayList<>();
+                    if(list.size()>0) {
 
-                    for(int i=0;i<list.size();i++){
-                        slider.add(list.get(i).getPropertyImage());
+                        ArrayList<String> slider = new ArrayList<>();
+
+                        for (int i = 0; i < list.size(); i++) {
+                            slider.add(list.get(i).getPropertyImage());
+                        }
+
+                        get_slider(slider);
                     }
+                    else{
 
-                    get_slider(slider);
+                    }
 
                     name.setText(buyerPurchasePropertyDetails.getPropertyName());
                     locat.setText(buyerPurchasePropertyDetails.getAddress());
@@ -136,6 +143,7 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
                     residential.setText(buyerPurchasePropertyDetails.getKindOfPropertyName());
                     property_type.setText(buyerPurchasePropertyDetails.getPropertyTypeName());
                     city.setText(buyerPurchasePropertyDetails.getAddress());
+                    link=buyerPurchasePropertyDetails.getWeblinkdetailPage();
 
                     if(buyerPurchasePropertyDetails.getKindOfPropertyName().equalsIgnoreCase("Commercial")){
                         txt_layout.setVisibility(View.GONE);

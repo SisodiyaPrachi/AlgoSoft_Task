@@ -55,7 +55,7 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
         holder.locat.setText(address);
         holder.prop_id.setText(" Property ID # "+restPropertyData.get(position).getPropertySequenceId());
 
-        Glide.with(context).load(image_base_url+restPropertyData.get(0).getImages().get(0).getPropertyImage()).into(holder.cat_img);
+        Glide.with(context).load(image_base_url+restPropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.cat_img);
         holder.view_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

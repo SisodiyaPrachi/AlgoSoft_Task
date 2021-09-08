@@ -47,7 +47,7 @@ public class PurchaseAdapter_Recycler extends RecyclerView.Adapter<PurchaseAdapt
     @Override
     public void onBindViewHolder(@NonNull PurchaseAdapter_Recycler.ViewHolder holder, int position) {
 
-        Glide.with(context).load(image_base_url+purchasePropertyData.get(0).getImages().get(0).getPropertyImage()).into(holder.imageView);
+        Glide.with(context).load(image_base_url+purchasePropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.imageView);
         holder.propertyid.setText("Property ID #"+purchasePropertyData.get(position).getPropertySequenceId());
         holder.area.setText("Area- "+String.valueOf(purchasePropertyData.get(position).getTotalArea())+" "+purchasePropertyData.get(position).getAreaType());
         holder.location.setText(String.valueOf(purchasePropertyData.get(position).getAddress()));
@@ -66,7 +66,7 @@ public class PurchaseAdapter_Recycler extends RecyclerView.Adapter<PurchaseAdapt
         holder.btn_viewdetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, BidDetailsProperty_Activity.class);
+                Intent intent=new Intent(context, PurchaseDetailsProperty_Activity.class);
                 intent.putExtra("propertyid",String.valueOf(purchasePropertyData.get(position).getPropertyId()));
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);

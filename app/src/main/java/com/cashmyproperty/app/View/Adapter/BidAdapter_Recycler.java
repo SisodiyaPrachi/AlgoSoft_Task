@@ -50,12 +50,12 @@ public class BidAdapter_Recycler extends RecyclerView.Adapter<BidAdapter_Recycle
     @Override
     public void onBindViewHolder(@NonNull BidAdapter_Recycler.ViewHolder holder, int position) {
 
-        Glide.with(context).load(image_base_url+bidPropertyData.get(0).getImages().get(0).getPropertyImage()).into(holder.imageView);
+        Glide.with(context).load(image_base_url+bidPropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.imageView);
         holder.propertyid.setText("Property ID #"+bidPropertyData.get(position).getPropertySequenceId());
         holder.area.setText("Area- "+String.valueOf(bidPropertyData.get(position).getTotalArea()+" "+bidPropertyData.get(position).getAreaType()));
         holder.location.setText(String.valueOf(bidPropertyData.get(position).getAddress()));
-        //holder.txt_startamt.setText(bidPropertyData.get(position).getStartAmount());
-        holder.current_bid.setText(bidPropertyData.get(position).getCurrentBiding());
+        holder.txt_startamt.setText(bidPropertyData.get(position).getStartAmount());
+        holder.current_bid.setText("AED "+bidPropertyData.get(position).getCurrentBiding());
         holder.img_des.setText(bidPropertyData.get(position).getPropertyName());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +103,7 @@ public class BidAdapter_Recycler extends RecyclerView.Adapter<BidAdapter_Recycle
             layout=itemView.findViewById(R.id.layout);
             img_des=itemView.findViewById(R.id.img_des);
             location=itemView.findViewById(R.id.location);
-            // txt_startamt=itemView.findViewById(R.id.txt_startamt);
+             txt_startamt=itemView.findViewById(R.id.txt_startamt);
             current_bid=itemView.findViewById(R.id.current_bid);
 
         }

@@ -43,7 +43,6 @@
         <activity android:name=".View.Steps.Step_Second"/>
         <activity android:name=".View.Steps.ThirdStep_Activity"/>
         <activity android:name=".View.Steps.FourthStep_Activity"/>
-        <activity android:name=".View.Activities.Search_Activity"/>
         <activity android:name=".View.DetailPage.PhotoView_Activity"/>
         <activity android:name=".View.DetailPage.PurchaseDetailsProperty_Activity" />
         <activity android:name=".View.Activities.Navigation_Seller" />

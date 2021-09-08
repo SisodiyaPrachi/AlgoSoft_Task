@@ -49,7 +49,7 @@ public class ActClosing_Recycler extends RecyclerView.Adapter<ActClosing_Recycle
     @Override
     public void onBindViewHolder(@NonNull ActClosing_Recycler.ViewHolder holder, int position) {
 
-        Glide.with(context).load(image_base_url+auctionclosingProperties.get(0).getImages().get(0).getPropertyImage()).into(holder.cat_img);
+        Glide.with(context).load(image_base_url+auctionclosingProperties.get(position).getImages().get(0).getPropertyImage()).into(holder.cat_img);
         holder.area.setText("Area- "+String.valueOf(auctionclosingProperties.get(position).getTotalArea()) +" "+auctionclosingProperties.get(position).getAreaType());
         holder.propertyid.setText("Property ID #"+auctionclosingProperties.get(position).getPropertySequenceId());
         holder.img_des.setText(auctionclosingProperties.get(position).getPropertyName());

@@ -38,6 +38,7 @@ public class SoldDetailsProperty_Activity extends AppCompatActivity {
    ImageView back,share;
    SliderView image_details;
    String propertyid;
+    String link;
    ConstraintLayout con_details;
     private ProgressDialog progress;
     DataViewModel dataViewModel;
@@ -66,7 +67,7 @@ public class SoldDetailsProperty_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "Here is the share content body";
+                String shareBody = link;
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
@@ -110,17 +111,23 @@ public class SoldDetailsProperty_Activity extends AppCompatActivity {
 
                         List<Image> list=soldPropertyData.getImages();
 
-                        ArrayList<String> slider=new ArrayList<>();
+                        if(list.size()>0) {
 
-                        for(int i=0;i<list.size();i++){
-                            slider.add(list.get(i).getPropertyImage());
+                            ArrayList<String> slider = new ArrayList<>();
+
+                            for (int i = 0; i < list.size(); i++) {
+                                slider.add(list.get(i).getPropertyImage());
+                            }
+
+                            get_slider(slider);
                         }
+                        else{
 
-                        get_slider(slider);
+                        }
 
                         locat.setText(soldPropertyData.getAddress());
                         prop_id.setText("Property ID #"+soldPropertyData.getPropertySequenceId());
-                        amount.setText(soldPropertyData.getLastAmount());
+                        amount.setText("AED "+soldPropertyData.getLastAmount());
                         txt_title.setText(soldPropertyData.getPropertyName());
                         name.setText(soldPropertyData.getPropertyName());
                         residential.setText(soldPropertyData.getKindOfPropertyName());
@@ -136,6 +143,7 @@ public class SoldDetailsProperty_Activity extends AppCompatActivity {
                             layout.setText(String.valueOf(soldPropertyData.getNoOfBed()+" bedroom"));
                         }
                         location.setText(soldPropertyData.getLocationName());
+                        link=soldPropertyData.getWeblinkdetailPage();
 
                         showprogressbar(false);
 

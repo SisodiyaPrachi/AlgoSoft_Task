@@ -51,12 +51,12 @@ public class FavAdapter_Recycler extends RecyclerView.Adapter<FavAdapter_Recycle
     public void onBindViewHolder(@NonNull FavAdapter_Recycler.ViewHolder holder, int position) {
 
 
-        Glide.with(context).load(image_base_url+propertywishlistData.get(0).getImages().get(0).getPropertyImage()).into(holder.imageView);
+        Glide.with(context).load(image_base_url+propertywishlistData.get(position).getImages().get(0).getPropertyImage()).into(holder.imageView);
         holder.propertyid.setText("Property ID # "+propertywishlistData.get(position).getPropertySequenceId());
         holder.area.setText("Area- "+String.valueOf(propertywishlistData.get(position).getTotalArea())+" "+propertywishlistData.get(position).getAreaType());
         holder.location.setText(String.valueOf(propertywishlistData.get(position).getAddress()));
-        //holder.txt_startamt.setText(propertywishlistData.get(position).getStartAmount());
-        holder.current_bid.setText(String.valueOf(propertywishlistData.get(position).getCurrentBidAmount()));
+        holder.txt_startamt.setText("AED "+String.valueOf(propertywishlistData.get(position).getStartAmount()));
+        holder.current_bid.setText("AED "+String.valueOf(propertywishlistData.get(position).getCurrentBidAmount()));
         holder.img_des.setText(propertywishlistData.get(position).getPropertyName());
         holder.viewdetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +108,7 @@ public class FavAdapter_Recycler extends RecyclerView.Adapter<FavAdapter_Recycle
             layout=itemView.findViewById(R.id.layout);
             img_des=itemView.findViewById(R.id.img_des);
             location=itemView.findViewById(R.id.location);
-            // txt_startamt=itemView.findViewById(R.id.txt_startamt);
+             txt_startamt=itemView.findViewById(R.id.txt_startamt);
             current_bid=itemView.findViewById(R.id.current_bid);
 
         }

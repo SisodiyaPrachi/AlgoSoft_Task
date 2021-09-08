@@ -2,58 +2,42 @@ package com.cashmyproperty.app.View.DetailPage;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.Context;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
+
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.cashmyproperty.app.R;
 import com.cashmyproperty.app.View.Activities.Navigation_Activity;
-import com.cashmyproperty.app.View.Activities.Navigation_Seller;
 import com.cashmyproperty.app.View.Adapter.Agent_PhotosAdapter;
-import com.cashmyproperty.app.View.Adapter.BidAdapter_Recycler;
 import com.cashmyproperty.app.View.Adapter.PhotosAdapter;
 import com.cashmyproperty.app.View.Adapter.SliderAdapter_Agent;
-import com.cashmyproperty.app.View.Repository.DataRepository;
-import com.cashmyproperty.app.View.Response.BidPropertyDatum;
 import com.cashmyproperty.app.View.Response.BidsubmitData;
 import com.cashmyproperty.app.View.Response.Example;
 import com.cashmyproperty.app.View.Response.Image;
 import com.cashmyproperty.app.View.Response.PropertyDetailsData;
-import com.cashmyproperty.app.View.Response.Result;
-import com.cashmyproperty.app.View.Response.SellerData;
-import com.cashmyproperty.app.View.Response.SignUpResponse;
+
 import com.cashmyproperty.app.View.Response.SignUpResult;
 import com.cashmyproperty.app.View.Response.WishlistData;
-import com.cashmyproperty.app.View.Steps.FourthStep_Activity;
 import com.cashmyproperty.app.View.Utility.PreferenceUtils;
 import com.cashmyproperty.app.View.ViewModel.DataViewModel;
 import com.cashmyproperty.app.View.network.ApiService;
@@ -76,10 +60,10 @@ public class DetailsActivity extends AppCompatActivity {
     DataViewModel dataViewModel;
     ConstraintLayout con_details;
     String bid_txt;
-    int count;
+    String link;
     ImageView share,fav;
+    Integer curr_bid;
     SliderView image_details;
-    String image_base_url = "https://apkconnectlab.com/cmpdtest/";
     TextView name,locat,amount,bid_amount,residential,property_type,city,layout,location,prop_id,txt_layout,txt_bidamount,txt_amount;
     EditText bid_myammount;
     FrameLayout frame;
@@ -99,7 +83,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         initviews();
         propertyid=getIntent().getStringExtra("propertyid");
-
+       // Toast.makeText(getApplicationContext(),propertyid,Toast.LENGTH_SHORT).show();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,7 +103,7 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 bid_txt=bid_myammount.getText().toString();
-                if(Integer.valueOf(bid_txt)%5000==0){
+                if((Integer.valueOf(bid_txt)%5000==0) && (Integer.valueOf(bid_txt)>=(curr_bid+5000))){
                     submit_bid();
                 }
                 else{
@@ -133,7 +117,7 @@ public class DetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "Here is the share content body";
+                String shareBody = link;
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share via"));
@@ -281,7 +265,7 @@ public class DetailsActivity extends AppCompatActivity {
         btn_ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),Navigation_Seller.class);
+                Intent intent=new Intent(getApplicationContext(),Navigation_Activity.class);
                 startActivity(intent);
             }
         });
@@ -328,24 +312,32 @@ public class DetailsActivity extends AppCompatActivity {
                     PropertyDetailsData propertyDetailsData=result.getPropertyDetailsData();
                     List<Image> list=propertyDetailsData.getImages();
 
-                    ArrayList<String> slider=new ArrayList<>();
+                    if(list.size()>0) {
 
-                    for(int i=0;i<list.size();i++){
-                        slider.add(list.get(i).getPropertyImage());
+                        ArrayList<String> slider = new ArrayList<>();
+
+                        for (int i = 0; i < list.size(); i++) {
+                            slider.add(list.get(i).getPropertyImage());
+                        }
+
+                        get_slider(slider);
                     }
+                    else{
 
-                    get_slider(slider);
+                    }
                     name.setText(propertyDetailsData.getPropertyName());
                     locat.setText(propertyDetailsData.getAddress());
                     txt_title.setText(propertyDetailsData.getPropertyName());
                     prop_id.setText("Property ID # "+propertyDetailsData.getPropertySequenceId());
-                    amount.setText(propertyDetailsData.getStartAmount());
-                    bid_amount.setText(propertyDetailsData.getCurrentBidAmount());
+                    amount.setText("AED "+propertyDetailsData.getStartAmount());
+                    curr_bid= Integer.valueOf(propertyDetailsData.getCurrentBidAmount());
+                    bid_amount.setText("AED "+propertyDetailsData.getCurrentBidAmount());
                     bid=propertyDetailsData.getMyBidAmount();
                     bid_myammount.setText(String.valueOf(propertyDetailsData.getMyBidAmount()));
                     residential.setText(propertyDetailsData.getKindOfPropertyName());
                     property_type.setText(propertyDetailsData.getPropertyTypeName());
                     city.setText(propertyDetailsData.getAddress());
+                    link=propertyDetailsData.getWeblinkdetailPage();
 
                     if(propertyDetailsData.getKindOfPropertyName().equalsIgnoreCase("Commercial")){
                         txt_layout.setVisibility(View.GONE);
@@ -437,9 +429,15 @@ public class DetailsActivity extends AppCompatActivity {
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bid_txt=bid_myammount.getText().toString();
-                bid_txt= String.valueOf(Integer.valueOf(bid_txt)-5000);
-                bid_myammount.setText(String.valueOf(bid_txt));
+                bid_txt = bid_myammount.getText().toString();
+
+                if(Integer.valueOf(bid_txt)>=(curr_bid+5000)) {
+                    bid_txt = String.valueOf(Integer.valueOf(bid_txt) - 5000);
+                    bid_myammount.setText(String.valueOf(bid_txt));
+                }
+                else{
+                  //  Toast.makeText(getApplicationContext(),"no",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -457,24 +455,31 @@ public class DetailsActivity extends AppCompatActivity {
                     PropertyDetailsData propertyDetailsData=result.getPropertyDetailsData();
                     List<Image> list=propertyDetailsData.getImages();
 
-                    ArrayList<String> slider=new ArrayList<>();
+                    if(list.size()>0) {
 
-                    for(int i=0;i<list.size();i++){
-                        slider.add(list.get(i).getPropertyImage());
+                        ArrayList<String> slider = new ArrayList<>();
+
+                        for (int i = 0; i < list.size(); i++) {
+                            slider.add(list.get(i).getPropertyImage());
+                        }
+
+                        get_slider(slider);
                     }
+                    else{
 
-                    get_slider(slider);
+                    }
 
                     name.setText(propertyDetailsData.getPropertyName());
                     prop_id.setText("Property ID # "+propertyDetailsData.getPropertySequenceId());
                     locat.setText(propertyDetailsData.getAddress());
                     txt_title.setText(propertyDetailsData.getPropertyName());
                     amount.setText(propertyDetailsData.getStartAmount());
-                    bid_amount.setText(propertyDetailsData.getCurrentBidAmount());
+                    bid_amount.setText("AED "+String.valueOf(propertyDetailsData.getCurrentBidAmount()));
 //                    Toast.makeText(getApplicationContext(), propertyDetailsData.getCurrentBidAmount(), Toast.LENGTH_SHORT).show();
                     residential.setText(propertyDetailsData.getKindOfPropertyName());
                     property_type.setText(propertyDetailsData.getPropertyTypeName());
                     city.setText(propertyDetailsData.getAddress());
+                    link=propertyDetailsData.getWeblinkdetailPage();
 
                     if(propertyDetailsData.getKindOfPropertyName().equalsIgnoreCase("Commercial")){
                         txt_layout.setVisibility(View.GONE);
