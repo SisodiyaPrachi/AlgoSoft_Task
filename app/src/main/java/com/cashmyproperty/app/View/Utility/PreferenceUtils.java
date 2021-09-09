@@ -23,7 +23,6 @@ public class PreferenceUtils {
     public static final String UserType = "Cash_My_Prop_User_Type";
     public static final String PropertyID= "Cash_My_Prop_Property_ID";
     public static final String Login= "Cash_My_Prop_Login";
-    public static final String Status="Cash_My_Prop_Status";
 
     public static final String UserImage = "Cash_My_Prop_UserImage";
     public static final String UserID = "Cash_My_Prop_User_Token";

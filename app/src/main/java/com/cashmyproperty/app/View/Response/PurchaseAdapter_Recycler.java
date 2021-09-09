@@ -51,7 +51,7 @@ public class PurchaseAdapter_Recycler extends RecyclerView.Adapter<PurchaseAdapt
         holder.propertyid.setText("Property ID #"+purchasePropertyData.get(position).getPropertySequenceId());
         holder.area.setText("Area- "+String.valueOf(purchasePropertyData.get(position).getTotalArea())+" "+purchasePropertyData.get(position).getAreaType());
         holder.location.setText(String.valueOf(purchasePropertyData.get(position).getAddress()));
-        holder.txt_lastamt.setText(purchasePropertyData.get(position).getLastAmount());
+        holder.txt_lastamt.setText("AED "+purchasePropertyData.get(position).getLastAmount());
         holder.img_des.setText(purchasePropertyData.get(position).getPropertyName());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override

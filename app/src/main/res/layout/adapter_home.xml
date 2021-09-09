@@ -32,6 +32,7 @@
 
 
         <TextView
+            android:id="@+id/time_set"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Time left-02:30 min"

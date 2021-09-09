@@ -106,6 +106,7 @@ public class DatabyRecycler_Adapter extends RecyclerView.Adapter<DatabyRecycler_
             img_des = itemView.findViewById(R.id.img_des);
             propertyid = itemView.findViewById(R.id.propertyid);
             viewdetails = itemView.findViewById(R.id.viewdetails);
+            txt_startarea.setVisibility(View.GONE);
 
 
         }

@@ -16,9 +16,6 @@ public class BuyerBidPropertyDetails {
     @SerializedName("property_sequence_id")
     @Expose
     private String propertySequenceId;
-    @SerializedName("property_name")
-    @Expose
-    private String propertyName;
     @SerializedName("kind_of_property")
     @Expose
     private Long kindOfProperty;
@@ -67,6 +64,9 @@ public class BuyerBidPropertyDetails {
     @SerializedName("property_holder")
     @Expose
     private Long propertyHolder;
+    @SerializedName("property_name")
+    @Expose
+    private String propertyName;
     @SerializedName("title_deed")
     @Expose
     private String titleDeed;
@@ -79,6 +79,30 @@ public class BuyerBidPropertyDetails {
     @SerializedName("property_noc")
     @Expose
     private String propertyNoc;
+    @SerializedName("auction_start_bid_amount")
+    @Expose
+    private Integer auctionStartBidAmount;
+    @SerializedName("dewa_no")
+    @Expose
+    private String dewaNo;
+    @SerializedName("expected_price")
+    @Expose
+    private String expectedPrice;
+    @SerializedName("gas_no")
+    @Expose
+    private String gasNo;
+    @SerializedName("current_bid_amount")
+    @Expose
+    private Integer currentBidAmount;
+    @SerializedName("current_bid_seller_id")
+    @Expose
+    private Long currentBidSellerId;
+    @SerializedName("last_bid_amount")
+    @Expose
+    private Integer lastBidAmount;
+    @SerializedName("last_bid_seller_id")
+    @Expose
+    private Long lastBidSellerId;
     @SerializedName("kind_of_property_id")
     @Expose
     private Long kindOfPropertyId;
@@ -118,6 +142,9 @@ public class BuyerBidPropertyDetails {
     @SerializedName("weblinkdetailPage")
     @Expose
     private String weblinkdetailPage;
+    @SerializedName("propertywishlisted")
+    @Expose
+    private String propertywishlisted;
 
     public Long getPropertyId() {
         return propertyId;
@@ -125,11 +152,6 @@ public class BuyerBidPropertyDetails {
 
     public void setPropertyId(Long propertyId) {
         this.propertyId = propertyId;
-    }
-
-    public BuyerBidPropertyDetails withPropertyId(Long propertyId) {
-        this.propertyId = propertyId;
-        return this;
     }
 
     public Long getSellerId() {
@@ -140,35 +162,12 @@ public class BuyerBidPropertyDetails {
         this.sellerId = sellerId;
     }
 
-    public BuyerBidPropertyDetails withSellerId(Long sellerId) {
-        this.sellerId = sellerId;
-        return this;
-    }
-
     public String getPropertySequenceId() {
         return propertySequenceId;
     }
 
     public void setPropertySequenceId(String propertySequenceId) {
         this.propertySequenceId = propertySequenceId;
-    }
-
-    public BuyerBidPropertyDetails withPropertySequenceId(String propertySequenceId) {
-        this.propertySequenceId = propertySequenceId;
-        return this;
-    }
-
-    public String getPropertyName() {
-        return propertyName;
-    }
-
-    public void setPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-    }
-
-    public BuyerBidPropertyDetails withPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-        return this;
     }
 
     public Long getKindOfProperty() {
@@ -179,22 +178,12 @@ public class BuyerBidPropertyDetails {
         this.kindOfProperty = kindOfProperty;
     }
 
-    public BuyerBidPropertyDetails withKindOfProperty(Long kindOfProperty) {
-        this.kindOfProperty = kindOfProperty;
-        return this;
-    }
-
     public Long getPropertyType() {
         return propertyType;
     }
 
     public void setPropertyType(Long propertyType) {
         this.propertyType = propertyType;
-    }
-
-    public BuyerBidPropertyDetails withPropertyType(Long propertyType) {
-        this.propertyType = propertyType;
-        return this;
     }
 
     public Integer getCompletePropertyStep() {
@@ -205,22 +194,12 @@ public class BuyerBidPropertyDetails {
         this.completePropertyStep = completePropertyStep;
     }
 
-    public BuyerBidPropertyDetails withCompletePropertyStep(Integer completePropertyStep) {
-        this.completePropertyStep = completePropertyStep;
-        return this;
-    }
-
     public String getPropertyAssigned() {
         return propertyAssigned;
     }
 
     public void setPropertyAssigned(String propertyAssigned) {
         this.propertyAssigned = propertyAssigned;
-    }
-
-    public BuyerBidPropertyDetails withPropertyAssigned(String propertyAssigned) {
-        this.propertyAssigned = propertyAssigned;
-        return this;
     }
 
     public String getBasicDetailsVerify() {
@@ -231,22 +210,12 @@ public class BuyerBidPropertyDetails {
         this.basicDetailsVerify = basicDetailsVerify;
     }
 
-    public BuyerBidPropertyDetails withBasicDetailsVerify(String basicDetailsVerify) {
-        this.basicDetailsVerify = basicDetailsVerify;
-        return this;
-    }
-
     public String getPropertyDetailsVerify() {
         return propertyDetailsVerify;
     }
 
     public void setPropertyDetailsVerify(String propertyDetailsVerify) {
         this.propertyDetailsVerify = propertyDetailsVerify;
-    }
-
-    public BuyerBidPropertyDetails withPropertyDetailsVerify(String propertyDetailsVerify) {
-        this.propertyDetailsVerify = propertyDetailsVerify;
-        return this;
     }
 
     public String getPropertyImageVerify() {
@@ -257,22 +226,12 @@ public class BuyerBidPropertyDetails {
         this.propertyImageVerify = propertyImageVerify;
     }
 
-    public BuyerBidPropertyDetails withPropertyImageVerify(String propertyImageVerify) {
-        this.propertyImageVerify = propertyImageVerify;
-        return this;
-    }
-
     public String getPropertyVerified() {
         return propertyVerified;
     }
 
     public void setPropertyVerified(String propertyVerified) {
         this.propertyVerified = propertyVerified;
-    }
-
-    public BuyerBidPropertyDetails withPropertyVerified(String propertyVerified) {
-        this.propertyVerified = propertyVerified;
-        return this;
     }
 
     public Integer getCreationDate() {
@@ -283,22 +242,12 @@ public class BuyerBidPropertyDetails {
         this.creationDate = creationDate;
     }
 
-    public BuyerBidPropertyDetails withCreationDate(Integer creationDate) {
-        this.creationDate = creationDate;
-        return this;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public BuyerBidPropertyDetails withAddress(String address) {
-        this.address = address;
-        return this;
     }
 
     public String getAreaType() {
@@ -309,22 +258,12 @@ public class BuyerBidPropertyDetails {
         this.areaType = areaType;
     }
 
-    public BuyerBidPropertyDetails withAreaType(String areaType) {
-        this.areaType = areaType;
-        return this;
-    }
-
     public String getCurrentLocation() {
         return currentLocation;
     }
 
     public void setCurrentLocation(String currentLocation) {
         this.currentLocation = currentLocation;
-    }
-
-    public BuyerBidPropertyDetails withCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
-        return this;
     }
 
     public String getEidOrPassport() {
@@ -335,22 +274,12 @@ public class BuyerBidPropertyDetails {
         this.eidOrPassport = eidOrPassport;
     }
 
-    public BuyerBidPropertyDetails withEidOrPassport(String eidOrPassport) {
-        this.eidOrPassport = eidOrPassport;
-        return this;
-    }
-
     public Long getLocation() {
         return location;
     }
 
     public void setLocation(Long location) {
         this.location = location;
-    }
-
-    public BuyerBidPropertyDetails withLocation(Long location) {
-        this.location = location;
-        return this;
     }
 
     public Integer getNoOfBed() {
@@ -361,11 +290,6 @@ public class BuyerBidPropertyDetails {
         this.noOfBed = noOfBed;
     }
 
-    public BuyerBidPropertyDetails withNoOfBed(Integer noOfBed) {
-        this.noOfBed = noOfBed;
-        return this;
-    }
-
     public Long getPropertyHolder() {
         return propertyHolder;
     }
@@ -374,9 +298,12 @@ public class BuyerBidPropertyDetails {
         this.propertyHolder = propertyHolder;
     }
 
-    public BuyerBidPropertyDetails withPropertyHolder(Long propertyHolder) {
-        this.propertyHolder = propertyHolder;
-        return this;
+    public String getPropertyName() {
+        return propertyName;
+    }
+
+    public void setPropertyName(String propertyName) {
+        this.propertyName = propertyName;
     }
 
     public String getTitleDeed() {
@@ -387,22 +314,12 @@ public class BuyerBidPropertyDetails {
         this.titleDeed = titleDeed;
     }
 
-    public BuyerBidPropertyDetails withTitleDeed(String titleDeed) {
-        this.titleDeed = titleDeed;
-        return this;
-    }
-
     public Integer getTotalArea() {
         return totalArea;
     }
 
     public void setTotalArea(Integer totalArea) {
         this.totalArea = totalArea;
-    }
-
-    public BuyerBidPropertyDetails withTotalArea(Integer totalArea) {
-        this.totalArea = totalArea;
-        return this;
     }
 
     public String getDescription() {
@@ -413,11 +330,6 @@ public class BuyerBidPropertyDetails {
         this.description = description;
     }
 
-    public BuyerBidPropertyDetails withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
     public String getPropertyNoc() {
         return propertyNoc;
     }
@@ -426,9 +338,68 @@ public class BuyerBidPropertyDetails {
         this.propertyNoc = propertyNoc;
     }
 
-    public BuyerBidPropertyDetails withPropertyNoc(String propertyNoc) {
-        this.propertyNoc = propertyNoc;
-        return this;
+    public Integer getAuctionStartBidAmount() {
+        return auctionStartBidAmount;
+    }
+
+    public void setAuctionStartBidAmount(Integer auctionStartBidAmount) {
+        this.auctionStartBidAmount = auctionStartBidAmount;
+    }
+
+    public String getDewaNo() {
+        return dewaNo;
+    }
+
+    public void setDewaNo(String dewaNo) {
+        this.dewaNo = dewaNo;
+    }
+
+    public String getExpectedPrice() {
+        return expectedPrice;
+    }
+
+    public void setExpectedPrice(String expectedPrice) {
+        this.expectedPrice = expectedPrice;
+    }
+
+    public String getGasNo() {
+        return gasNo;
+    }
+
+    public void setGasNo(String gasNo) {
+        this.gasNo = gasNo;
+    }
+
+    public Integer getCurrentBidAmount() {
+        return currentBidAmount;
+    }
+
+    public void setCurrentBidAmount(Integer currentBidAmount) {
+        this.currentBidAmount = currentBidAmount;
+    }
+
+    public Long getCurrentBidSellerId() {
+        return currentBidSellerId;
+    }
+
+    public void setCurrentBidSellerId(Long currentBidSellerId) {
+        this.currentBidSellerId = currentBidSellerId;
+    }
+
+    public Integer getLastBidAmount() {
+        return lastBidAmount;
+    }
+
+    public void setLastBidAmount(Integer lastBidAmount) {
+        this.lastBidAmount = lastBidAmount;
+    }
+
+    public Long getLastBidSellerId() {
+        return lastBidSellerId;
+    }
+
+    public void setLastBidSellerId(Long lastBidSellerId) {
+        this.lastBidSellerId = lastBidSellerId;
     }
 
     public Long getKindOfPropertyId() {
@@ -439,22 +410,12 @@ public class BuyerBidPropertyDetails {
         this.kindOfPropertyId = kindOfPropertyId;
     }
 
-    public BuyerBidPropertyDetails withKindOfPropertyId(Long kindOfPropertyId) {
-        this.kindOfPropertyId = kindOfPropertyId;
-        return this;
-    }
-
     public String getKindOfPropertyName() {
         return kindOfPropertyName;
     }
 
     public void setKindOfPropertyName(String kindOfPropertyName) {
         this.kindOfPropertyName = kindOfPropertyName;
-    }
-
-    public BuyerBidPropertyDetails withKindOfPropertyName(String kindOfPropertyName) {
-        this.kindOfPropertyName = kindOfPropertyName;
-        return this;
     }
 
     public Long getPropertyTypeId() {
@@ -465,22 +426,12 @@ public class BuyerBidPropertyDetails {
         this.propertyTypeId = propertyTypeId;
     }
 
-    public BuyerBidPropertyDetails withPropertyTypeId(Long propertyTypeId) {
-        this.propertyTypeId = propertyTypeId;
-        return this;
-    }
-
     public String getPropertyTypeName() {
         return propertyTypeName;
     }
 
     public void setPropertyTypeName(String propertyTypeName) {
         this.propertyTypeName = propertyTypeName;
-    }
-
-    public BuyerBidPropertyDetails withPropertyTypeName(String propertyTypeName) {
-        this.propertyTypeName = propertyTypeName;
-        return this;
     }
 
     public Long getLocationId() {
@@ -491,22 +442,12 @@ public class BuyerBidPropertyDetails {
         this.locationId = locationId;
     }
 
-    public BuyerBidPropertyDetails withLocationId(Long locationId) {
-        this.locationId = locationId;
-        return this;
-    }
-
     public String getLocationName() {
         return locationName;
     }
 
     public void setLocationName(String locationName) {
         this.locationName = locationName;
-    }
-
-    public BuyerBidPropertyDetails withLocationName(String locationName) {
-        this.locationName = locationName;
-        return this;
     }
 
     public Long getPropertyHolderId() {
@@ -517,22 +458,12 @@ public class BuyerBidPropertyDetails {
         this.propertyHolderId = propertyHolderId;
     }
 
-    public BuyerBidPropertyDetails withPropertyHolderId(Long propertyHolderId) {
-        this.propertyHolderId = propertyHolderId;
-        return this;
-    }
-
     public String getPropertyHolderName() {
         return propertyHolderName;
     }
 
     public void setPropertyHolderName(String propertyHolderName) {
         this.propertyHolderName = propertyHolderName;
-    }
-
-    public BuyerBidPropertyDetails withPropertyHolderName(String propertyHolderName) {
-        this.propertyHolderName = propertyHolderName;
-        return this;
     }
 
     public List<Image> getImages() {
@@ -543,22 +474,12 @@ public class BuyerBidPropertyDetails {
         this.images = images;
     }
 
-    public BuyerBidPropertyDetails withImages(List<Image> images) {
-        this.images = images;
-        return this;
-    }
-
     public String getStartAmount() {
         return startAmount;
     }
 
     public void setStartAmount(String startAmount) {
         this.startAmount = startAmount;
-    }
-
-    public BuyerBidPropertyDetails withStartAmount(String startAmount) {
-        this.startAmount = startAmount;
-        return this;
     }
 
     public Integer getCurrentBiding() {
@@ -569,11 +490,6 @@ public class BuyerBidPropertyDetails {
         this.currentBiding = currentBiding;
     }
 
-    public BuyerBidPropertyDetails withCurrentBiding(Integer currentBiding) {
-        this.currentBiding = currentBiding;
-        return this;
-    }
-
     public Integer getMyBidAmount() {
         return myBidAmount;
     }
@@ -582,10 +498,6 @@ public class BuyerBidPropertyDetails {
         this.myBidAmount = myBidAmount;
     }
 
-    public BuyerBidPropertyDetails withMyBidAmount(Integer myBidAmount) {
-        this.myBidAmount = myBidAmount;
-        return this;
-    }
     public String getWeblinkdetailPage() {
         return weblinkdetailPage;
     }
@@ -594,4 +506,11 @@ public class BuyerBidPropertyDetails {
         this.weblinkdetailPage = weblinkdetailPage;
     }
 
+    public String getPropertywishlisted() {
+        return propertywishlisted;
+    }
+
+    public void setPropertywishlisted(String propertywishlisted) {
+        this.propertywishlisted = propertywishlisted;
+    }
 }

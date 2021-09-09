@@ -2,6 +2,7 @@ package com.cashmyproperty.app.View.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -48,12 +50,35 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
 
 
         String address=  restPropertyData.get(position).getAddress();
+        //String auction_end_date=restPropertyData.get(position).g
 
         holder.name.setText(restPropertyData.get(position).getPropertyName());
         holder.bid.setText("Last Bid Amount- "+String.valueOf(restPropertyData.get(position).getLastBid()));
         String upperString = address.substring(0, 1).toUpperCase() + address.substring(1).toLowerCase();
         holder.locat.setText(address);
         holder.prop_id.setText(" Property ID # "+restPropertyData.get(position).getPropertySequenceId());
+
+
+            /*new CountDownTimer(360000*60*1000, 1000) {
+                public void onTick(long millisUntilFinished) {
+
+                    long seconds = millisUntilFinished/1000;
+                    long minutes = seconds / 60;
+                    long hours = minutes / 60;
+                    if(minutes > 0)
+                        seconds = seconds % 60;
+                    if(hours > 0)
+                        minutes = minutes % 60;
+                    String time = formatNumber(hours) + ":" + formatNumber(minutes) + ":" +
+                            formatNumber(seconds);
+                    holder.time_set.setText(time);
+                }
+
+                public void onFinish() {
+                    Toast.makeText(context,"timing issue",Toast.LENGTH_SHORT).show();
+                }
+            }.start();*/
+
 
         Glide.with(context).load(image_base_url+restPropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.cat_img);
         holder.view_details.setOnClickListener(new View.OnClickListener() {
@@ -87,7 +112,7 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
         ImageView cat_img;
         Button view_details;
         RelativeLayout layout;
-        TextView name,locat,bid,prop_id;
+        TextView name,locat,bid,prop_id,time_set;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -99,8 +124,14 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
             locat=itemView.findViewById(R.id.locat);
             bid=itemView.findViewById(R.id.bid);
             prop_id=itemView.findViewById(R.id.prop_id);
-
+            time_set=itemView.findViewById(R.id.time_set);
         }
+    }
+
+    private String formatNumber(long value){
+        if(value < 10)
+            return "0" + value;
+        return value + "";
     }
 }
 

@@ -105,7 +105,7 @@ public class PropertywishlistDatum {
     private Integer lastBidAmount;
     @SerializedName("last_bid_seller_id")
     @Expose
-    private Integer lastBidSellerId;
+    private String lastBidSellerId;
     @SerializedName("kind_of_property_id")
     @Expose
     private Long kindOfPropertyId;
@@ -402,11 +402,11 @@ public class PropertywishlistDatum {
         this.lastBidAmount = lastBidAmount;
     }
 
-    public Integer getLastBidSellerId() {
+    public String getLastBidSellerId() {
         return lastBidSellerId;
     }
 
-    public void setLastBidSellerId(Integer lastBidSellerId) {
+    public void setLastBidSellerId(String lastBidSellerId) {
         this.lastBidSellerId = lastBidSellerId;
     }
 

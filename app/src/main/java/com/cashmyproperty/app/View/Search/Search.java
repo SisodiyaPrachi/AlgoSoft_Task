@@ -64,7 +64,7 @@ public class Search extends Fragment {
     String search_type;
     NestedScrollView nested_scroll;
     private ProgressDialog progress;
-    TextView name, locat, lastbid, txt_action, act_des, txt_exp, exp_des, txt_rec, rec_text, amount, bid_amount,chk_offer;
+    TextView name, locat, lastbid,txt_amount, txt_action, act_des, txt_exp, exp_des, txt_rec, rec_text, amount, bid_amount,chk_offer;
 
     public Search() {
     }
@@ -155,6 +155,7 @@ public class Search extends Fragment {
         lastbid = view.findViewById(R.id.lastbid);
         amount = view.findViewById(R.id.amount);
         chk_offer=view.findViewById(R.id.chk_offer);
+        txt_amount=view.findViewById(R.id.txt_amount);
         //agent_homelyt=view.findViewById(R.id.agent_homelyt);
         bid_amount = view.findViewById(R.id.bid_amount);
         cv_one_login = view.findViewById(R.id.cv_one_login);
@@ -171,6 +172,8 @@ public class Search extends Fragment {
 
         cv_one_login.setVisibility(View.GONE);
 
+        txt_amount.setVisibility(View.GONE);
+        amount.setVisibility(View.GONE);
 
         searchbar = view.findViewById(R.id.search_bar);
         img_back = view.findViewById(R.id.img_back);

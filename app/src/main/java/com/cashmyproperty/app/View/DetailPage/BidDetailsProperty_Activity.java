@@ -54,7 +54,7 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
 
     RecyclerView rec_photos;
     BidProperty_Adapter bidProperty_adapter;
-    TextView txt_mybidamount,txt_note,bid_myammount,name,locat,amount,txt_layout
+    TextView txt_mybidamount,txt_note,bid_myammount,name,locat,amount,txt_layout,txt_amount
             ,bid_amount,residential,property_type,city,layout,location,prop_id,txt_title;
     Button btn_submit;
     ImageView back,share,fav,plus,sub;
@@ -70,6 +70,7 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
     ConstraintLayout con_details;
     private ProgressDialog progress;
     DataViewModel dataViewModel;
+    String wishlist="N";
     String image_base_url = "https://apkconnectlab.com/cmpdtest/";
 
     @Override
@@ -83,13 +84,6 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
         dataViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
         get_biddetails();
 
-        if(PreferenceUtils.getStringValue(getApplicationContext(),PreferenceUtils.Status).equalsIgnoreCase("Success")) {
-
-            fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-        }
-        else {
-            fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-        }
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,10 +166,8 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
                         WishlistData wishlistData=response.body().getResult().getWishlistData();
                         fav.setImageResource(R.drawable.ic_baseline_favorite_24);
                         //PreferenceUtils.setStringValue(getApplicationContext(), PreferenceUtils.UserToken, data.getUsersToken());
-                        PreferenceUtils.setStringValue(getApplicationContext(),PreferenceUtils.Status,"Success");
                         Toast.makeText(getApplicationContext(),response.body().getMessage(),Toast.LENGTH_SHORT).show();
                     }else{
-                        PreferenceUtils.setStringValue(getApplicationContext(),PreferenceUtils.Status,"Fail");
                         fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
                         Toast.makeText(getApplicationContext(),response.body().getMessage(),Toast.LENGTH_SHORT).show();
                     }
@@ -306,6 +298,14 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
                     property_type.setText(buyerBidPropertyDetails.getPropertyTypeName());
                     city.setText(buyerBidPropertyDetails.getAddress());
                     link=buyerBidPropertyDetails.getWeblinkdetailPage();
+                    wishlist=buyerBidPropertyDetails.getPropertywishlisted();
+
+                    if(wishlist.equals("Y")) {
+                        fav.setImageResource(R.drawable.ic_baseline_favorite_24);
+                    }
+                    else {
+                        fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+                    }
 
                     if(buyerBidPropertyDetails.getKindOfPropertyName().equalsIgnoreCase("Commercial")){
                         txt_layout.setVisibility(View.GONE);
@@ -351,6 +351,7 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
         back=findViewById(R.id.back);
         share=findViewById(R.id.share);
         fav=findViewById(R.id.fav);
+        txt_amount=findViewById(R.id.txt_amount);
         con_details=findViewById(R.id.con_details);
         name=findViewById(R.id.name);
         txt_title=findViewById(R.id.txt_title);
@@ -372,6 +373,9 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
 
         rec_photos=findViewById(R.id.rec_photos);
 
+        txt_amount.setVisibility(View.GONE);
+        amount.setVisibility(View.GONE);
+
         RecyclerView.LayoutManager recyclerViewLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         rec_photos.setLayoutManager(recyclerViewLayoutManager);
 
@@ -389,7 +393,7 @@ public class BidDetailsProperty_Activity extends AppCompatActivity {
             public void onClick(View view) {
                 bid_txt = bid_myammount.getText().toString();
 
-                if(Integer.valueOf(bid_txt)>=(curr_bid+5000)) {
+                if(Integer.valueOf(bid_txt)>(curr_bid+5000)) {
                     bid_txt = String.valueOf(Integer.valueOf(bid_txt) - 5000);
                     bid_myammount.setText(String.valueOf(bid_txt));
                 }

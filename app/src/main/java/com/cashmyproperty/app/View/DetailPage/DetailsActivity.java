@@ -67,6 +67,7 @@ public class DetailsActivity extends AppCompatActivity {
     TextView name,locat,amount,bid_amount,residential,property_type,city,layout,location,prop_id,txt_layout,txt_bidamount,txt_amount;
     EditText bid_myammount;
     FrameLayout frame;
+    String wishlist="N";
     TextView txt_mybidamount,txt_note,txt_title;
     ImageView back,plus,sub;
     Integer bid;
@@ -83,21 +84,13 @@ public class DetailsActivity extends AppCompatActivity {
 
         initviews();
         propertyid=getIntent().getStringExtra("propertyid");
-       // Toast.makeText(getApplicationContext(),propertyid,Toast.LENGTH_SHORT).show();
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
-
-        if(PreferenceUtils.getStringValue(getApplicationContext(),PreferenceUtils.Status).equalsIgnoreCase("Success")) {
-
-            fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-        }
-        else {
-            fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-        }
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,13 +147,19 @@ public class DetailsActivity extends AppCompatActivity {
         dataViewModel = ViewModelProviders.of(this).get(DataViewModel.class);
 
         if(PreferenceUtils.getStringValue(getApplicationContext(),PreferenceUtils.UserType).equalsIgnoreCase("Seller")) {
-
+            txt_amount.setVisibility(View.VISIBLE);
+            amount.setVisibility(View.VISIBLE);
             get_details();
         }
         else{
-
+            txt_amount.setVisibility(View.GONE);
+            amount.setVisibility(View.GONE);
             get_buyerdetails();
         }
+       // Toast.makeText(getApplicationContext(),wishlist,Toast.LENGTH_SHORT).show();
+
+
+
 
     }
 
@@ -186,10 +185,8 @@ public class DetailsActivity extends AppCompatActivity {
                         if(response.body().getSuccess()==1){
                             WishlistData wishlistData=response.body().getResult().getWishlistData();
                             fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-                            PreferenceUtils.setStringValue(getApplicationContext(),PreferenceUtils.Status,"Success");
                             Toast.makeText(getApplicationContext(),response.body().getMessage(),Toast.LENGTH_SHORT).show();
                         }else{
-                            PreferenceUtils.setStringValue(getApplicationContext(),PreferenceUtils.Status,"Fail");
                             fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
                             Toast.makeText(getApplicationContext(),response.body().getMessage(),Toast.LENGTH_SHORT).show();
                         }
@@ -338,6 +335,14 @@ public class DetailsActivity extends AppCompatActivity {
                     property_type.setText(propertyDetailsData.getPropertyTypeName());
                     city.setText(propertyDetailsData.getAddress());
                     link=propertyDetailsData.getWeblinkdetailPage();
+                    wishlist=propertyDetailsData.getPropertywishlisted();
+
+                    if(wishlist.equals("Y")) {
+                        fav.setImageResource(R.drawable.ic_baseline_favorite_24);
+                    }
+                    else {
+                        fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+                    }
 
                     if(propertyDetailsData.getKindOfPropertyName().equalsIgnoreCase("Commercial")){
                         txt_layout.setVisibility(View.GONE);
@@ -431,7 +436,7 @@ public class DetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 bid_txt = bid_myammount.getText().toString();
 
-                if(Integer.valueOf(bid_txt)>=(curr_bid+5000)) {
+                if(Integer.valueOf(bid_txt)>(curr_bid+5000)) {
                     bid_txt = String.valueOf(Integer.valueOf(bid_txt) - 5000);
                     bid_myammount.setText(String.valueOf(bid_txt));
                 }
@@ -473,7 +478,7 @@ public class DetailsActivity extends AppCompatActivity {
                     prop_id.setText("Property ID # "+propertyDetailsData.getPropertySequenceId());
                     locat.setText(propertyDetailsData.getAddress());
                     txt_title.setText(propertyDetailsData.getPropertyName());
-                    amount.setText(propertyDetailsData.getStartAmount());
+                    amount.setText("AED "+propertyDetailsData.getStartAmount());
                     bid_amount.setText("AED "+String.valueOf(propertyDetailsData.getCurrentBidAmount()));
 //                    Toast.makeText(getApplicationContext(), propertyDetailsData.getCurrentBidAmount(), Toast.LENGTH_SHORT).show();
                     residential.setText(propertyDetailsData.getKindOfPropertyName());
@@ -502,9 +507,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     private void get_photos(PropertyDetailsData propertyDetailsData) {
 
-
         photosAdapter = new PhotosAdapter(getApplicationContext(),propertyDetailsData);
-
         rec_photos.setAdapter(photosAdapter);
 
     }

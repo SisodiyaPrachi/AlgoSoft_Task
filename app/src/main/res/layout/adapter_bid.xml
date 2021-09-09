@@ -132,6 +132,7 @@
                             android:paddingLeft="2dp"
                             android:layout_weight="50"
                             android:textSize="10sp"
+                            android:visibility="gone"
                             android:fontFamily="sans-serif-medium"
                             android:text="Starting Amount">
                         </TextView>

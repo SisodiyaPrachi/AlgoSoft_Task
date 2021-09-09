@@ -46,13 +46,13 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
 
     RecyclerView rec_photos;
     PurchaseProperty_Adapter purchaseProperty_adapter;
-    TextView txt_mybidamount,txt_note,bid_myammount,btn_submit,name,locat,amount
+    TextView txt_mybidamount,txt_note,bid_myammount,btn_submit,name,locat,amount,txt_amount
             ,residential,property_type,city,layout,location,prop_id,txt_layout,txt_title;
     ImageView back,share,fav;
     SliderView image_details;
     String propertyid="";
     ConstraintLayout con_details;
-    int count=0;
+    String wishlist="N";
     String link;
     DataViewModel dataViewModel;
     private ProgressDialog progress;
@@ -77,13 +77,7 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
             }
         });
 
-        if(PreferenceUtils.getStringValue(getApplicationContext(),PreferenceUtils.Status).equalsIgnoreCase("Success")) {
 
-            fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-        }
-        else {
-            fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-        }
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,7 +132,7 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
                     name.setText(buyerPurchasePropertyDetails.getPropertyName());
                     locat.setText(buyerPurchasePropertyDetails.getAddress());
                     txt_title.setText(buyerPurchasePropertyDetails.getPropertyName());
-                    amount.setText(buyerPurchasePropertyDetails.getLastBiding());
+                    amount.setText("AED "+buyerPurchasePropertyDetails.getLastBiding());
                     prop_id.setText("Property ID #"+buyerPurchasePropertyDetails.getPropertySequenceId());
                     residential.setText(buyerPurchasePropertyDetails.getKindOfPropertyName());
                     property_type.setText(buyerPurchasePropertyDetails.getPropertyTypeName());
@@ -156,8 +150,13 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
                     }
 
                     location.setText(buyerPurchasePropertyDetails.getLocationName());
-
-
+                    wishlist=buyerPurchasePropertyDetails.getPropertywishlisted();
+                    if(wishlist.equals("Y")) {
+                        fav.setImageResource(R.drawable.ic_baseline_favorite_24);
+                    }
+                    else {
+                        fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
+                    }
 
                     showprogressbar(false);
 
@@ -189,6 +188,7 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
         back=findViewById(R.id.back);
         share=findViewById(R.id.share);
         fav=findViewById(R.id.fav);
+        txt_amount=findViewById(R.id.txt_amount);
         prop_id=findViewById(R.id.prop_id);
         txt_layout=findViewById(R.id.txt_layout);
         image_details=findViewById(R.id.image_details);
@@ -205,6 +205,9 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
 
         rec_photos=findViewById(R.id.rec_photos);
         con_details.setVisibility(View.GONE);
+
+        txt_amount.setVisibility(View.VISIBLE);
+        amount.setVisibility(View.VISIBLE);
 
         RecyclerView.LayoutManager recyclerViewLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
         rec_photos.setLayoutManager(recyclerViewLayoutManager);
@@ -238,15 +241,13 @@ public class PurchaseDetailsProperty_Activity extends AppCompatActivity {
                 Log.e("set_fav","Response: "+new Gson().toJson(response.body()));
                 if(response.body()!=null){
                     if(response.body().getSuccess()==1){
-                        count=1;
+
                         WishlistData wishlistData=response.body().getResult().getWishlistData();
                         fav.setImageResource(R.drawable.ic_baseline_favorite_24);
-                        PreferenceUtils.setStringValue(getApplicationContext(),PreferenceUtils.Status,"Success");
                         Toast.makeText(getApplicationContext(),response.body().getMessage(),Toast.LENGTH_SHORT).show();
                     }else{
-                        count=0;
+
                         fav.setImageResource(R.drawable.ic_baseline_favorite_border_24);
-                        PreferenceUtils.setStringValue(getApplicationContext(),PreferenceUtils.Status,"Fail");
                         Toast.makeText(getApplicationContext(),response.body().getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 }else{

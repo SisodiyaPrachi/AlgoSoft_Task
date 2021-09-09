@@ -105,6 +105,7 @@ public class BidAdapter_Recycler extends RecyclerView.Adapter<BidAdapter_Recycle
             location=itemView.findViewById(R.id.location);
              txt_startamt=itemView.findViewById(R.id.txt_startamt);
             current_bid=itemView.findViewById(R.id.current_bid);
+            txt_startamt.setVisibility(View.GONE);
 
         }
     }

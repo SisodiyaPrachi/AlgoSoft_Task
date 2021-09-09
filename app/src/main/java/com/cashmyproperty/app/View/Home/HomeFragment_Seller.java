@@ -62,6 +62,11 @@ public class HomeFragment_Seller extends Fragment {
 
         getSliderimg();
 
+      //  Long tsLong = System.currentTimeMillis()/1000;
+      //  String ts = tsLong.toString();
+
+       // Toast.makeText(getActivity(),ts,Toast.LENGTH_SHORT).show();
+
 
         return view;
     }
