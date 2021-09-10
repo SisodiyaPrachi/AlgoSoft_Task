@@ -47,6 +47,7 @@ public class DataByCategory_Activity extends AppCompatActivity {
     private  boolean ascending= true;
     private ProgressDialog progress;
     ArrayList<String> location;
+    TextView txt_title;
     List<PropertyDatum> propertyData;
     TextView price,location_place,time,bids;
 
@@ -66,6 +67,7 @@ public class DataByCategory_Activity extends AppCompatActivity {
         location_place=findViewById(R.id.location_place);
         time=findViewById(R.id.time);
         bids=findViewById(R.id.bids);
+        txt_title=findViewById(R.id.txt_title);
         tool_bar = findViewById(R.id.tool_bar);
         tool_bar.setNavigationIcon(R.drawable.ic_baseline_keyboard_backspace_24);
 
@@ -219,7 +221,7 @@ public class DataByCategory_Activity extends AppCompatActivity {
 
                         propertyData=result.getPropertyData();
                         SubCategoryData sub_categoryData = result.getSubCategoryData();
-                        tool_bar.setTitle(sub_categoryData.getSubCategoryName());
+                    txt_title.setText(sub_categoryData.getSubCategoryName());
 
                         if (propertyData.size()>0) {
                             showprogressbar(false);

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,7 @@ public class SubCategoryFragment extends Fragment implements SubCategory_Adapter
     RecyclerView rec_category;
     SubCategory_Adapter resedential_adapter;
     MaterialToolbar tool_bar;
+    TextView txt_title;
     DataViewModel dataViewModel;
     private ProgressDialog progress;
 
@@ -53,6 +55,7 @@ public class SubCategoryFragment extends Fragment implements SubCategory_Adapter
         dataViewModel = ViewModelProviders.of(getActivity()).get(DataViewModel.class);
 
         rec_category = view.findViewById(R.id.rec_category);
+        txt_title=view.findViewById(R.id.txt_title);
 
         tool_bar=view.findViewById(R.id.tool_bar);
         tool_bar.setNavigationIcon(R.drawable.ic_baseline_keyboard_backspace_24);
@@ -86,7 +89,7 @@ public class SubCategoryFragment extends Fragment implements SubCategory_Adapter
                         CategoryData data=result.getCategoryData();
                        List<SubCategoryDatum> subCategoryData = result.getSubCategoryData();
 
-                       tool_bar.setTitle(data.getCategoryName());
+                    txt_title.setText(data.getCategoryName());
 
                         showprogressbar(false);
 

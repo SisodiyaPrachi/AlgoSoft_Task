@@ -15,9 +15,6 @@ public class RestPropertyDatum {
     @SerializedName("property_sequence_id")
     @Expose
     private String propertySequenceId;
-    @SerializedName("property_name")
-    @Expose
-    private String propertyName;
     @SerializedName("kind_of_property")
     @Expose
     private Long kindOfProperty;
@@ -66,6 +63,9 @@ public class RestPropertyDatum {
     @SerializedName("property_holder")
     @Expose
     private Long propertyHolder;
+    @SerializedName("property_name")
+    @Expose
+    private String propertyName;
     @SerializedName("title_deed")
     @Expose
     private String titleDeed;
@@ -78,12 +78,48 @@ public class RestPropertyDatum {
     @SerializedName("property_noc")
     @Expose
     private String propertyNoc;
+    @SerializedName("auction_start_bid_amount")
+    @Expose
+    private Integer auctionStartBidAmount;
+    @SerializedName("dewa_no")
+    @Expose
+    private String dewaNo;
+    @SerializedName("expected_price")
+    @Expose
+    private String expectedPrice;
+    @SerializedName("gas_no")
+    @Expose
+    private String gasNo;
+    @SerializedName("auction_end_date")
+    @Expose
+    private Integer auctionEndDate;
+    @SerializedName("auction_start_date")
+    @Expose
+    private Integer auctionStartDate;
+    @SerializedName("property_verified_date")
+    @Expose
+    private Integer propertyVerifiedDate;
+    @SerializedName("current_bid_amount")
+    @Expose
+    private Integer currentBidAmount;
+    @SerializedName("current_bid_seller_id")
+    @Expose
+    private Long currentBidSellerId;
+    @SerializedName("last_bid_amount")
+    @Expose
+    private Integer lastBidAmount;
+    @SerializedName("last_bid_seller_id")
+    @Expose
+    private Long lastBidSellerId;
     @SerializedName("kind_of_property_id")
     @Expose
     private Long kindOfPropertyId;
     @SerializedName("kind_of_property_name")
     @Expose
     private String kindOfPropertyName;
+    @SerializedName("users_sequence_id")
+    @Expose
+    private String usersSequenceId;
     @SerializedName("property_type_id")
     @Expose
     private Long propertyTypeId;
@@ -107,7 +143,10 @@ public class RestPropertyDatum {
     private List<Image__1> images = null;
     @SerializedName("lastBid")
     @Expose
-    private String lastBid;
+    private Integer lastBid;
+    @SerializedName("exact_date")
+    @Expose
+    private String exactDate;
 
     public Long getPropertyId() {
         return propertyId;
@@ -115,11 +154,6 @@ public class RestPropertyDatum {
 
     public void setPropertyId(Long propertyId) {
         this.propertyId = propertyId;
-    }
-
-    public RestPropertyDatum withPropertyId(Long propertyId) {
-        this.propertyId = propertyId;
-        return this;
     }
 
     public Long getSellerId() {
@@ -130,35 +164,12 @@ public class RestPropertyDatum {
         this.sellerId = sellerId;
     }
 
-    public RestPropertyDatum withSellerId(Long sellerId) {
-        this.sellerId = sellerId;
-        return this;
-    }
-
     public String getPropertySequenceId() {
         return propertySequenceId;
     }
 
     public void setPropertySequenceId(String propertySequenceId) {
         this.propertySequenceId = propertySequenceId;
-    }
-
-    public RestPropertyDatum withPropertySequenceId(String propertySequenceId) {
-        this.propertySequenceId = propertySequenceId;
-        return this;
-    }
-
-    public String getPropertyName() {
-        return propertyName;
-    }
-
-    public void setPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-    }
-
-    public RestPropertyDatum withPropertyName(String propertyName) {
-        this.propertyName = propertyName;
-        return this;
     }
 
     public Long getKindOfProperty() {
@@ -169,22 +180,12 @@ public class RestPropertyDatum {
         this.kindOfProperty = kindOfProperty;
     }
 
-    public RestPropertyDatum withKindOfProperty(Long kindOfProperty) {
-        this.kindOfProperty = kindOfProperty;
-        return this;
-    }
-
     public Long getPropertyType() {
         return propertyType;
     }
 
     public void setPropertyType(Long propertyType) {
         this.propertyType = propertyType;
-    }
-
-    public RestPropertyDatum withPropertyType(Long propertyType) {
-        this.propertyType = propertyType;
-        return this;
     }
 
     public Integer getCompletePropertyStep() {
@@ -195,22 +196,12 @@ public class RestPropertyDatum {
         this.completePropertyStep = completePropertyStep;
     }
 
-    public RestPropertyDatum withCompletePropertyStep(Integer completePropertyStep) {
-        this.completePropertyStep = completePropertyStep;
-        return this;
-    }
-
     public String getPropertyAssigned() {
         return propertyAssigned;
     }
 
     public void setPropertyAssigned(String propertyAssigned) {
         this.propertyAssigned = propertyAssigned;
-    }
-
-    public RestPropertyDatum withPropertyAssigned(String propertyAssigned) {
-        this.propertyAssigned = propertyAssigned;
-        return this;
     }
 
     public String getBasicDetailsVerify() {
@@ -221,22 +212,12 @@ public class RestPropertyDatum {
         this.basicDetailsVerify = basicDetailsVerify;
     }
 
-    public RestPropertyDatum withBasicDetailsVerify(String basicDetailsVerify) {
-        this.basicDetailsVerify = basicDetailsVerify;
-        return this;
-    }
-
     public String getPropertyDetailsVerify() {
         return propertyDetailsVerify;
     }
 
     public void setPropertyDetailsVerify(String propertyDetailsVerify) {
         this.propertyDetailsVerify = propertyDetailsVerify;
-    }
-
-    public RestPropertyDatum withPropertyDetailsVerify(String propertyDetailsVerify) {
-        this.propertyDetailsVerify = propertyDetailsVerify;
-        return this;
     }
 
     public String getPropertyImageVerify() {
@@ -247,22 +228,12 @@ public class RestPropertyDatum {
         this.propertyImageVerify = propertyImageVerify;
     }
 
-    public RestPropertyDatum withPropertyImageVerify(String propertyImageVerify) {
-        this.propertyImageVerify = propertyImageVerify;
-        return this;
-    }
-
     public String getPropertyVerified() {
         return propertyVerified;
     }
 
     public void setPropertyVerified(String propertyVerified) {
         this.propertyVerified = propertyVerified;
-    }
-
-    public RestPropertyDatum withPropertyVerified(String propertyVerified) {
-        this.propertyVerified = propertyVerified;
-        return this;
     }
 
     public Integer getCreationDate() {
@@ -273,22 +244,12 @@ public class RestPropertyDatum {
         this.creationDate = creationDate;
     }
 
-    public RestPropertyDatum withCreationDate(Integer creationDate) {
-        this.creationDate = creationDate;
-        return this;
-    }
-
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public RestPropertyDatum withAddress(String address) {
-        this.address = address;
-        return this;
     }
 
     public String getAreaType() {
@@ -299,22 +260,12 @@ public class RestPropertyDatum {
         this.areaType = areaType;
     }
 
-    public RestPropertyDatum withAreaType(String areaType) {
-        this.areaType = areaType;
-        return this;
-    }
-
     public String getCurrentLocation() {
         return currentLocation;
     }
 
     public void setCurrentLocation(String currentLocation) {
         this.currentLocation = currentLocation;
-    }
-
-    public RestPropertyDatum withCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
-        return this;
     }
 
     public String getEidOrPassport() {
@@ -325,22 +276,12 @@ public class RestPropertyDatum {
         this.eidOrPassport = eidOrPassport;
     }
 
-    public RestPropertyDatum withEidOrPassport(String eidOrPassport) {
-        this.eidOrPassport = eidOrPassport;
-        return this;
-    }
-
     public Long getLocation() {
         return location;
     }
 
     public void setLocation(Long location) {
         this.location = location;
-    }
-
-    public RestPropertyDatum withLocation(Long location) {
-        this.location = location;
-        return this;
     }
 
     public Integer getNoOfBed() {
@@ -351,11 +292,6 @@ public class RestPropertyDatum {
         this.noOfBed = noOfBed;
     }
 
-    public RestPropertyDatum withNoOfBed(Integer noOfBed) {
-        this.noOfBed = noOfBed;
-        return this;
-    }
-
     public Long getPropertyHolder() {
         return propertyHolder;
     }
@@ -364,9 +300,12 @@ public class RestPropertyDatum {
         this.propertyHolder = propertyHolder;
     }
 
-    public RestPropertyDatum withPropertyHolder(Long propertyHolder) {
-        this.propertyHolder = propertyHolder;
-        return this;
+    public String getPropertyName() {
+        return propertyName;
+    }
+
+    public void setPropertyName(String propertyName) {
+        this.propertyName = propertyName;
     }
 
     public String getTitleDeed() {
@@ -377,22 +316,12 @@ public class RestPropertyDatum {
         this.titleDeed = titleDeed;
     }
 
-    public RestPropertyDatum withTitleDeed(String titleDeed) {
-        this.titleDeed = titleDeed;
-        return this;
-    }
-
     public Integer getTotalArea() {
         return totalArea;
     }
 
     public void setTotalArea(Integer totalArea) {
         this.totalArea = totalArea;
-    }
-
-    public RestPropertyDatum withTotalArea(Integer totalArea) {
-        this.totalArea = totalArea;
-        return this;
     }
 
     public String getDescription() {
@@ -403,11 +332,6 @@ public class RestPropertyDatum {
         this.description = description;
     }
 
-    public RestPropertyDatum withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
     public String getPropertyNoc() {
         return propertyNoc;
     }
@@ -416,9 +340,92 @@ public class RestPropertyDatum {
         this.propertyNoc = propertyNoc;
     }
 
-    public RestPropertyDatum withPropertyNoc(String propertyNoc) {
-        this.propertyNoc = propertyNoc;
-        return this;
+    public Integer getAuctionStartBidAmount() {
+        return auctionStartBidAmount;
+    }
+
+    public void setAuctionStartBidAmount(Integer auctionStartBidAmount) {
+        this.auctionStartBidAmount = auctionStartBidAmount;
+    }
+
+    public String getDewaNo() {
+        return dewaNo;
+    }
+
+    public void setDewaNo(String dewaNo) {
+        this.dewaNo = dewaNo;
+    }
+
+    public String getExpectedPrice() {
+        return expectedPrice;
+    }
+
+    public void setExpectedPrice(String expectedPrice) {
+        this.expectedPrice = expectedPrice;
+    }
+
+    public String getGasNo() {
+        return gasNo;
+    }
+
+    public void setGasNo(String gasNo) {
+        this.gasNo = gasNo;
+    }
+
+    public Integer getAuctionEndDate() {
+        return auctionEndDate;
+    }
+
+    public void setAuctionEndDate(Integer auctionEndDate) {
+        this.auctionEndDate = auctionEndDate;
+    }
+
+    public Integer getAuctionStartDate() {
+        return auctionStartDate;
+    }
+
+    public void setAuctionStartDate(Integer auctionStartDate) {
+        this.auctionStartDate = auctionStartDate;
+    }
+
+    public Integer getPropertyVerifiedDate() {
+        return propertyVerifiedDate;
+    }
+
+    public void setPropertyVerifiedDate(Integer propertyVerifiedDate) {
+        this.propertyVerifiedDate = propertyVerifiedDate;
+    }
+
+    public Integer getCurrentBidAmount() {
+        return currentBidAmount;
+    }
+
+    public void setCurrentBidAmount(Integer currentBidAmount) {
+        this.currentBidAmount = currentBidAmount;
+    }
+
+    public Long getCurrentBidSellerId() {
+        return currentBidSellerId;
+    }
+
+    public void setCurrentBidSellerId(Long currentBidSellerId) {
+        this.currentBidSellerId = currentBidSellerId;
+    }
+
+    public Integer getLastBidAmount() {
+        return lastBidAmount;
+    }
+
+    public void setLastBidAmount(Integer lastBidAmount) {
+        this.lastBidAmount = lastBidAmount;
+    }
+
+    public Long getLastBidSellerId() {
+        return lastBidSellerId;
+    }
+
+    public void setLastBidSellerId(Long lastBidSellerId) {
+        this.lastBidSellerId = lastBidSellerId;
     }
 
     public Long getKindOfPropertyId() {
@@ -429,11 +436,6 @@ public class RestPropertyDatum {
         this.kindOfPropertyId = kindOfPropertyId;
     }
 
-    public RestPropertyDatum withKindOfPropertyId(Long kindOfPropertyId) {
-        this.kindOfPropertyId = kindOfPropertyId;
-        return this;
-    }
-
     public String getKindOfPropertyName() {
         return kindOfPropertyName;
     }
@@ -442,9 +444,12 @@ public class RestPropertyDatum {
         this.kindOfPropertyName = kindOfPropertyName;
     }
 
-    public RestPropertyDatum withKindOfPropertyName(String kindOfPropertyName) {
-        this.kindOfPropertyName = kindOfPropertyName;
-        return this;
+    public String getUsersSequenceId() {
+        return usersSequenceId;
+    }
+
+    public void setUsersSequenceId(String usersSequenceId) {
+        this.usersSequenceId = usersSequenceId;
     }
 
     public Long getPropertyTypeId() {
@@ -455,22 +460,12 @@ public class RestPropertyDatum {
         this.propertyTypeId = propertyTypeId;
     }
 
-    public RestPropertyDatum withPropertyTypeId(Long propertyTypeId) {
-        this.propertyTypeId = propertyTypeId;
-        return this;
-    }
-
     public String getPropertyTypeName() {
         return propertyTypeName;
     }
 
     public void setPropertyTypeName(String propertyTypeName) {
         this.propertyTypeName = propertyTypeName;
-    }
-
-    public RestPropertyDatum withPropertyTypeName(String propertyTypeName) {
-        this.propertyTypeName = propertyTypeName;
-        return this;
     }
 
     public Long getLocationId() {
@@ -481,22 +476,12 @@ public class RestPropertyDatum {
         this.locationId = locationId;
     }
 
-    public RestPropertyDatum withLocationId(Long locationId) {
-        this.locationId = locationId;
-        return this;
-    }
-
     public String getLocationName() {
         return locationName;
     }
 
     public void setLocationName(String locationName) {
         this.locationName = locationName;
-    }
-
-    public RestPropertyDatum withLocationName(String locationName) {
-        this.locationName = locationName;
-        return this;
     }
 
     public Long getPropertyHolderId() {
@@ -507,22 +492,12 @@ public class RestPropertyDatum {
         this.propertyHolderId = propertyHolderId;
     }
 
-    public RestPropertyDatum withPropertyHolderId(Long propertyHolderId) {
-        this.propertyHolderId = propertyHolderId;
-        return this;
-    }
-
     public String getPropertyHolderName() {
         return propertyHolderName;
     }
 
     public void setPropertyHolderName(String propertyHolderName) {
         this.propertyHolderName = propertyHolderName;
-    }
-
-    public RestPropertyDatum withPropertyHolderName(String propertyHolderName) {
-        this.propertyHolderName = propertyHolderName;
-        return this;
     }
 
     public List<Image__1> getImages() {
@@ -533,21 +508,20 @@ public class RestPropertyDatum {
         this.images = images;
     }
 
-    public RestPropertyDatum withImages(List<Image__1> images) {
-        this.images = images;
-        return this;
-    }
-
-    public String getLastBid() {
+    public Integer getLastBid() {
         return lastBid;
     }
 
-    public void setLastBid(String lastBid) {
+    public void setLastBid(Integer lastBid) {
         this.lastBid = lastBid;
     }
 
-    public RestPropertyDatum withLastBid(String lastBid) {
-        this.lastBid = lastBid;
-        return this;
+    public String getExactDate() {
+        return exactDate;
     }
+
+    public void setExactDate(String exactDate) {
+        this.exactDate = exactDate;
+    }
+
 }

@@ -208,9 +208,9 @@ public class Search extends Fragment {
                         cv_one_login.setVisibility(View.VISIBLE);
                         name.setText(hometopProperty.get(0).getPropertyName());
                         locat.setText(hometopProperty.get(0).getAddress());
-                        lastbid.setText("Last Bid Amount-" + hometopProperty.get(0).getLastBidAmount());
+                        lastbid.setText("Last Bid Amount- AED " + hometopProperty.get(0).getLastBidAmount());
                         amount.setText(hometopProperty.get(0).getStartAmount());
-                        bid_amount.setText(hometopProperty.get(0).getLastBidAmount());
+                        bid_amount.setText("AED "+hometopProperty.get(0).getCurrentBidAmount());
 
                         cv_one_login.setOnClickListener(new View.OnClickListener() {
                             @Override

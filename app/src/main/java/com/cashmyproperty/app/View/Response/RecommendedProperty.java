@@ -109,6 +109,9 @@ public class RecommendedProperty {
     @SerializedName("lastBidAmount")
     @Expose
     private String lastBidAmount;
+    @SerializedName("exact_date")
+    @Expose
+    private String exactDate;
 
     public Long getPropertyId() {
         return propertyId;
@@ -550,6 +553,14 @@ public class RecommendedProperty {
     public RecommendedProperty withLastBidAmount(String lastBidAmount) {
         this.lastBidAmount = lastBidAmount;
         return this;
+    }
+
+    public String getExactDate() {
+        return exactDate;
+    }
+
+    public void setExactDate(String exactDate) {
+        this.exactDate = exactDate;
     }
 
 }

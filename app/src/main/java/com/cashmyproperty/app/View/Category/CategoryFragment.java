@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,7 @@ public class CategoryFragment extends Fragment implements Category_Adapter.Oncli
     RecyclerView rec_category;
     Category_Adapter category_adapter;
     MaterialToolbar tool_bar;
+    TextView txt_title;
     private ProgressDialog progress;
     DataViewModel dataViewModel;
 
@@ -53,6 +55,7 @@ public class CategoryFragment extends Fragment implements Category_Adapter.Oncli
         rec_category = view.findViewById(R.id.rec_category);
         RecyclerView.LayoutManager recyclerViewLayoutManager = new GridLayoutManager(getActivity(), 2);
         rec_category.setLayoutManager(recyclerViewLayoutManager);
+        txt_title=view.findViewById(R.id.txt_title);
 
         //Change 2 to your choice because here 2 is the number of Grid layout Columns in each row.
 

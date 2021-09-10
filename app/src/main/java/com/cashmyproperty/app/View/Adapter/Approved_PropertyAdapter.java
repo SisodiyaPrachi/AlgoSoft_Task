@@ -3,6 +3,7 @@ package com.cashmyproperty.app.View.Adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.os.CountDownTimer;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,13 +23,23 @@ import com.cashmyproperty.app.View.DetailPage.DetailsActivity;
 import com.cashmyproperty.app.View.Response.Image__1;
 import com.cashmyproperty.app.View.Response.RestPropertyDatum;
 
+import java.security.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 import static android.media.CamcorderProfile.get;
+import static android.media.MediaExtractor.MetricsConstants.FORMAT;
 
 public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_PropertyAdapter.ViewHolder> {
 
     Context context;
+    private static final String FORMAT = "%02d:%02d:%02d:%02d";
+    int seconds , minutes;
+    private SimpleDateFormat dateFormat;
     List<RestPropertyDatum> restPropertyData;
     String image_base_url = "https://apkconnectlab.com/cmpdtest/";
 
@@ -50,7 +61,25 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
 
 
         String address=  restPropertyData.get(position).getAddress();
-        //String auction_end_date=restPropertyData.get(position).g
+        String auction_end_date= restPropertyData.get(position).getExactDate();
+
+        Long ff=(new Date(auction_end_date)).getTime();/*"2021/09/18"*/
+       // Toast.makeText(context,String.valueOf(ff),Toast.LENGTH_SHORT).show();
+
+        Calendar calendar = Calendar.getInstance();
+        dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        String date = dateFormat.format(calendar.getTime());
+
+        Long current_time = (new Date(date)).getTime();
+         // Long current_time = System.currentTimeMillis()/1000;
+          Long time  = ff - current_time;
+
+
+
+        //Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        //cal.setTimeInMillis(auction_end_date * 1000);
+        //String date = DateFormat.format("dd-MM-yyyy", cal).toString();
+        //Toast.makeText(context,date,Toast.LENGTH_SHORT).show();
 
         holder.name.setText(restPropertyData.get(position).getPropertyName());
         holder.bid.setText("Last Bid Amount- "+String.valueOf(restPropertyData.get(position).getLastBid()));
@@ -59,9 +88,37 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
         holder.prop_id.setText(" Property ID # "+restPropertyData.get(position).getPropertySequenceId());
 
 
-            /*new CountDownTimer(360000*60*1000, 1000) {
+            new CountDownTimer(time, 1000) {
                 public void onTick(long millisUntilFinished) {
 
+
+                    long Days = millisUntilFinished / (24 * 60 * 60 * 1000);
+                    long Hours = millisUntilFinished / (60 * 60 * 1000) % 24;
+                    long Minutes = millisUntilFinished / (60 * 1000) % 60;
+                    long Seconds = millisUntilFinished / 1000 % 60;
+                    holder.time_set.setText("Time Left-"+String.format("%02d days ",Days)+String.format("%02d hrs ",Hours)
+                            +String.format("%02d min ",Minutes)+String.format("%02dsec ",Seconds));
+
+                    /*long millis = millisUntilFinished;
+                    String hms = String.format("%02d:%02d:%02d:%02d",
+                            TimeUnit.HOURS.toDays(TimeUnit.MILLISECONDS.toHours(millis)),
+                            (TimeUnit.MILLISECONDS.toHours(millis) -
+                                    TimeUnit.DAYS.toHours(TimeUnit.MILLISECONDS.toDays(millis))),
+                            (TimeUnit.MILLISECONDS.toMinutes(millis) -
+                                    TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis))), (TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis))));
+                    holder.time_set.setText(hms);//set text*/
+
+                    /*holder.time_set.setText(""+String.format(FORMAT,
+                            TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
+                            TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
+                                    TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+                            TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+                                    TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));*/
+                }
+
+
+               /* long days=millisUntilFinished/86400;
+                    long hrs=days/
                     long seconds = millisUntilFinished/1000;
                     long minutes = seconds / 60;
                     long hours = minutes / 60;
@@ -71,13 +128,12 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
                         minutes = minutes % 60;
                     String time = formatNumber(hours) + ":" + formatNumber(minutes) + ":" +
                             formatNumber(seconds);
-                    holder.time_set.setText(time);
-                }
+                    holder.time_set.setText("Time Left- "+time);*/
 
                 public void onFinish() {
                     Toast.makeText(context,"timing issue",Toast.LENGTH_SHORT).show();
                 }
-            }.start();*/
+            }.start();
 
 
         Glide.with(context).load(image_base_url+restPropertyData.get(position).getImages().get(0).getPropertyImage()).into(holder.cat_img);
@@ -128,10 +184,10 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
         }
     }
 
-    private String formatNumber(long value){
+   /* private String formatNumber(long value){
         if(value < 10)
             return "0" + value;
         return value + "";
-    }
+    }*/
 }
 

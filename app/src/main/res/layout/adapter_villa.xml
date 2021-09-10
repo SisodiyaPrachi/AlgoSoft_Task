@@ -170,6 +170,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="50"
                         android:paddingLeft="2dp"
+                        android:visibility="gone"
                         android:fontFamily="sans-serif-medium"
                         android:textColor="@color/black"
                         android:textSize="11sp"

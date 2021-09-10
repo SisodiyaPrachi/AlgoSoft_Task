@@ -35,7 +35,6 @@ public class ActClosing_Recycler extends RecyclerView.Adapter<ActClosing_Recycle
         this.context=context;
         this.auctionclosingProperties = auctionclosingProperties;
 
-
     }
 
 
@@ -55,7 +54,7 @@ public class ActClosing_Recycler extends RecyclerView.Adapter<ActClosing_Recycle
         holder.img_des.setText(auctionclosingProperties.get(position).getPropertyName());
         holder.location.setText(auctionclosingProperties.get(position).getAddress());
         // holder.txt_startarea.setText(auctionclosingProperties.get(position).getStartAmount());
-        holder.current_buil.setText(auctionclosingProperties.get(position).getCurrentBidAmount());
+        holder.current_buil.setText("AED "+auctionclosingProperties.get(position).getCurrentBidAmount());
 
         holder.viewdetails.setOnClickListener(new View.OnClickListener() {
             @Override
