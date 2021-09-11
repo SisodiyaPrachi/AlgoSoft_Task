@@ -38,7 +38,7 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
 
     Context context;
     private static final String FORMAT = "%02d:%02d:%02d:%02d";
-    int seconds , minutes;
+    private static final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
     private SimpleDateFormat dateFormat;
     List<RestPropertyDatum> restPropertyData;
     String image_base_url = "https://apkconnectlab.com/cmpdtest/";
@@ -67,13 +67,15 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
        // Toast.makeText(context,String.valueOf(ff),Toast.LENGTH_SHORT).show();
 
         Calendar calendar = Calendar.getInstance();
-        dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         String date = dateFormat.format(calendar.getTime());
+
+       // System.out.println();
 
         Long current_time = (new Date(date)).getTime();
          // Long current_time = System.currentTimeMillis()/1000;
           Long time  = ff - current_time;
-
+       // Toast.makeText(context,String.valueOf(current_time),Toast.LENGTH_SHORT).show();
 
 
         //Calendar cal = Calendar.getInstance(Locale.ENGLISH);
@@ -83,7 +85,7 @@ public class Approved_PropertyAdapter extends RecyclerView.Adapter<Approved_Prop
 
         holder.name.setText(restPropertyData.get(position).getPropertyName());
         holder.bid.setText("Last Bid Amount- "+String.valueOf(restPropertyData.get(position).getLastBid()));
-        String upperString = address.substring(0, 1).toUpperCase() + address.substring(1).toLowerCase();
+       // String upperString = address.substring(0, 1).toUpperCase() + address.substring(1).toLowerCase();
         holder.locat.setText(address);
         holder.prop_id.setText(" Property ID # "+restPropertyData.get(position).getPropertySequenceId());
 

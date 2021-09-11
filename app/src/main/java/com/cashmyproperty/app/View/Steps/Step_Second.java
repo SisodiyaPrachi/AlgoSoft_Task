@@ -244,8 +244,12 @@ public class Step_Second extends AppCompatActivity implements PropertyAdapter.On
         showprogressbar(true);
 
         areadetails = txt_areadetails.getText().toString();
-         String addres_s = address.getText().toString();
+      address_holder = address.getText().toString();
+        /* if(addres_s.length()>0)
         address_holder = addres_s.substring(0, 1).toUpperCase() + addres_s.substring(1).toLowerCase();
+         else{
+             address.setError("Please Enter Address Here");
+         }*/
 
         ApiService apiService = ApiService.getInstance();
 

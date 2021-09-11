@@ -503,6 +503,7 @@
         android:layout_height="130dp"
         android:layout_margin="10dp"
         android:padding="10dp"
+        android:inputType="textCapWords"
         android:background="@drawable/rounded_edittext"
         app:layout_constraintTop_toBottomOf="@+id/txt_info">
     </com.google.android.material.textfield.TextInputEditText>

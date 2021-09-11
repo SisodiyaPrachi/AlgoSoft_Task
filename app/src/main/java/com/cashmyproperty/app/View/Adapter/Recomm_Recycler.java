@@ -67,7 +67,7 @@ public class Recomm_Recycler extends RecyclerView.Adapter<Recomm_Recycler.ViewHo
         //Toast.makeText(context,String.valueOf(ff),Toast.LENGTH_SHORT).show();
 
         Calendar calendar = Calendar.getInstance();
-        dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         String date = dateFormat.format(calendar.getTime());
 
         Long current_time = (new Date(date)).getTime();

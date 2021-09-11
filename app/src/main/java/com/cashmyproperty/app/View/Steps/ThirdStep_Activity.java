@@ -99,7 +99,12 @@ public class ThirdStep_Activity extends AppCompatActivity {
                     txt_extrainfo.setError("Please Enter Description");
                 }
                 else {
+
+                    if(imagePath.length()>0)
                     sub_thirdstep();
+                    else{
+                        Toast.makeText(getApplicationContext(),"Please add atleast one Image",Toast.LENGTH_SHORT).show();
+                    }
 
                 }
             }
